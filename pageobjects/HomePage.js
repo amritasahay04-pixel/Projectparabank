@@ -4,6 +4,7 @@
        {
             this.page=page
             this.signInbutton=page.locator("//a[normalize-space()='Register']")
+            this.logoutLink=page.locator("//a[contains(., 'Log Out') or contains(., 'Log out') or contains(., 'logout')]").first()
        }
 
        async goTo()
@@ -14,5 +15,10 @@
        async clickOnSigninButton()
        {
           await this.signInbutton.click()
+       }
+
+       async clickOnLogoutLink()
+       {
+          await this.logoutLink.click()
        }
   }

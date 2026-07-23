@@ -1,6 +1,7 @@
 import {HomePage} from '../pageobjects/HomePage'
 import {RegistrationPage} from '../pageobjects/RegistrationPage'
 import {LoginPage} from '../pageobjects/LoginPage'
+import {FundTransferPage} from '../pageobjects/FundTransferPage'
 
 export class poManager
 {
@@ -10,6 +11,8 @@ export class poManager
         this.homepage = new HomePage(this.page)
         this.registerpage = new RegistrationPage(this.page)
         this.loginpage = new LoginPage(this.page)
+        this.fundtransferpage = new FundTransferPage(this.page)
+        // this.fundtrasferdetails = new FundTransferPage(this.page)
 
     }
     //create a method for homepage
@@ -27,5 +30,14 @@ export class poManager
     {
         return this.loginpage
     }
+    //create a method for fund transfer page
+    getFundTransferPage()
+    {
+        return this.fundtransferpage
+    }
+    // getFundTransferDetails()
+    // {
+    //     return this.fundtrasferdetails
+    // }
 
 }
