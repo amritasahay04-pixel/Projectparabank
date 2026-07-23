@@ -17,7 +17,7 @@ export class RegistrationPage
          this.registerbutton =page.locator("//input[@value='Register']")
       }
 
-    async regesterNewUser(fname,lname,address,city,state,zipcode,phone,ssn,username,pass)
+    async registerNewUser(fname,lname,address,city,state,zipcode,phone,ssn,username,pass)
     {
         await this.firstName.fill(fname)
         await this.lastName.fill(lname)

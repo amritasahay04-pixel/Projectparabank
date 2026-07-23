@@ -1,0 +1,4348 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: TC.spec.js >> fund transfer
+- Location: tests\TC.spec.js:132:5
+
+# Error details
+
+```
+Error: expect(locator).toContainText(expected) failed
+
+Locator: locator('body')
+Expected substring: "wsdl:definitions"
+Error: TypeError: Cannot read properties of undefined (reading 'includes')
+    at parseSelectorString (<anonymous>:1712:17)
+    at parseSelector (<anonymous>:1599:25)
+    at InjectedScript.parseSelector (<anonymous>:6689:20)
+    at makeStrict (<anonymous>:5967:43)
+    at cssFallback (<anonymous>:6011:10)
+    at generateSelector (<anonymous>:5740:100)
+    at InjectedScript.generateSelectorSimple (<anonymous>:6700:12)
+    at <anonymous>:7575:24
+    at Array.map (<anonymous>)
+    at InjectedScript._generateSelectors (<anonymous>:7573:52)
+
+Call log:
+  - Expect "toContainText" with timeout 5000ms
+  - waiting for locator('body')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]: This XML file does not appear to have any style information associated with it. The document tree is shown below.
+  - generic [ref=e4]:
+    - generic [ref=e7]:
+      - text: <wsdl:definitions
+      - generic [ref=e8]: xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      - generic [ref=e9]: xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+      - generic [ref=e10]: xmlns:tns="http://service.parabank.parasoft.com/"
+      - generic [ref=e11]: xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+      - generic [ref=e12]: xmlns:ns1="http://schemas.xmlsoap.org/soap/http"
+      - generic [ref=e13]: name="ParaBank"
+      - generic [ref=e14]: targetNamespace="http://service.parabank.parasoft.com/"
+      - text: ">"
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e19]: <wsdl:types>
+        - generic [ref=e21]:
+          - generic [ref=e24]:
+            - text: <xs:schema
+            - generic [ref=e25]: xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            - generic [ref=e26]: xmlns:tns="http://service.parabank.parasoft.com/"
+            - generic [ref=e27]: attributeFormDefault="unqualified"
+            - generic [ref=e28]: elementFormDefault="qualified"
+            - generic [ref=e29]: targetNamespace="http://service.parabank.parasoft.com/"
+            - generic [ref=e30]: version="1.0"
+            - text: ">"
+          - generic [ref=e31]:
+            - generic [ref=e33]:
+              - text: <xs:element
+              - generic [ref=e34]: name="account"
+              - generic [ref=e35]: type="tns:account"
+              - text: />
+            - generic [ref=e37]:
+              - text: <xs:element
+              - generic [ref=e38]: name="billPay"
+              - generic [ref=e39]: type="tns:billPay"
+              - text: />
+            - generic [ref=e41]:
+              - text: <xs:element
+              - generic [ref=e42]: name="billPayResponse"
+              - generic [ref=e43]: type="tns:billPayResponse"
+              - text: />
+            - generic [ref=e45]:
+              - text: <xs:element
+              - generic [ref=e46]: name="billPayResult"
+              - generic [ref=e47]: type="tns:billPayResult"
+              - text: />
+            - generic [ref=e49]:
+              - text: <xs:element
+              - generic [ref=e50]: name="buyPosition"
+              - generic [ref=e51]: type="tns:buyPosition"
+              - text: />
+            - generic [ref=e53]:
+              - text: <xs:element
+              - generic [ref=e54]: name="buyPositionResponse"
+              - generic [ref=e55]: type="tns:buyPositionResponse"
+              - text: />
+            - generic [ref=e57]:
+              - text: <xs:element
+              - generic [ref=e58]: name="cleanDB"
+              - generic [ref=e59]: type="tns:cleanDB"
+              - text: />
+            - generic [ref=e61]:
+              - text: <xs:element
+              - generic [ref=e62]: name="cleanDBResponse"
+              - generic [ref=e63]: type="tns:cleanDBResponse"
+              - text: />
+            - generic [ref=e65]:
+              - text: <xs:element
+              - generic [ref=e66]: name="createAccount"
+              - generic [ref=e67]: type="tns:createAccount"
+              - text: />
+            - generic [ref=e69]:
+              - text: <xs:element
+              - generic [ref=e70]: name="createAccountResponse"
+              - generic [ref=e71]: type="tns:createAccountResponse"
+              - text: />
+            - generic [ref=e73]:
+              - text: <xs:element
+              - generic [ref=e74]: name="customer"
+              - generic [ref=e75]: type="tns:customer"
+              - text: />
+            - generic [ref=e77]:
+              - text: <xs:element
+              - generic [ref=e78]: name="deposit"
+              - generic [ref=e79]: type="tns:deposit"
+              - text: />
+            - generic [ref=e81]:
+              - text: <xs:element
+              - generic [ref=e82]: name="depositResponse"
+              - generic [ref=e83]: type="tns:depositResponse"
+              - text: />
+            - generic [ref=e85]:
+              - text: <xs:element
+              - generic [ref=e86]: name="getAccount"
+              - generic [ref=e87]: type="tns:getAccount"
+              - text: />
+            - generic [ref=e89]:
+              - text: <xs:element
+              - generic [ref=e90]: name="getAccountResponse"
+              - generic [ref=e91]: type="tns:getAccountResponse"
+              - text: />
+            - generic [ref=e93]:
+              - text: <xs:element
+              - generic [ref=e94]: name="getAccounts"
+              - generic [ref=e95]: type="tns:getAccounts"
+              - text: />
+            - generic [ref=e97]:
+              - text: <xs:element
+              - generic [ref=e98]: name="getAccountsResponse"
+              - generic [ref=e99]: type="tns:getAccountsResponse"
+              - text: />
+            - generic [ref=e101]:
+              - text: <xs:element
+              - generic [ref=e102]: name="getCustomer"
+              - generic [ref=e103]: type="tns:getCustomer"
+              - text: />
+            - generic [ref=e105]:
+              - text: <xs:element
+              - generic [ref=e106]: name="getCustomerResponse"
+              - generic [ref=e107]: type="tns:getCustomerResponse"
+              - text: />
+            - generic [ref=e109]:
+              - text: <xs:element
+              - generic [ref=e110]: name="getPosition"
+              - generic [ref=e111]: type="tns:getPosition"
+              - text: />
+            - generic [ref=e113]:
+              - text: <xs:element
+              - generic [ref=e114]: name="getPositionHistory"
+              - generic [ref=e115]: type="tns:getPositionHistory"
+              - text: />
+            - generic [ref=e117]:
+              - text: <xs:element
+              - generic [ref=e118]: name="getPositionHistoryResponse"
+              - generic [ref=e119]: type="tns:getPositionHistoryResponse"
+              - text: />
+            - generic [ref=e121]:
+              - text: <xs:element
+              - generic [ref=e122]: name="getPositionResponse"
+              - generic [ref=e123]: type="tns:getPositionResponse"
+              - text: />
+            - generic [ref=e125]:
+              - text: <xs:element
+              - generic [ref=e126]: name="getPositions"
+              - generic [ref=e127]: type="tns:getPositions"
+              - text: />
+            - generic [ref=e129]:
+              - text: <xs:element
+              - generic [ref=e130]: name="getPositionsResponse"
+              - generic [ref=e131]: type="tns:getPositionsResponse"
+              - text: />
+            - generic [ref=e133]:
+              - text: <xs:element
+              - generic [ref=e134]: name="getTransaction"
+              - generic [ref=e135]: type="tns:getTransaction"
+              - text: />
+            - generic [ref=e137]:
+              - text: <xs:element
+              - generic [ref=e138]: name="getTransactionResponse"
+              - generic [ref=e139]: type="tns:getTransactionResponse"
+              - text: />
+            - generic [ref=e141]:
+              - text: <xs:element
+              - generic [ref=e142]: name="getTransactions"
+              - generic [ref=e143]: type="tns:getTransactions"
+              - text: />
+            - generic [ref=e145]:
+              - text: <xs:element
+              - generic [ref=e146]: name="getTransactionsByAmount"
+              - generic [ref=e147]: type="tns:getTransactionsByAmount"
+              - text: />
+            - generic [ref=e149]:
+              - text: <xs:element
+              - generic [ref=e150]: name="getTransactionsByAmountResponse"
+              - generic [ref=e151]: type="tns:getTransactionsByAmountResponse"
+              - text: />
+            - generic [ref=e153]:
+              - text: <xs:element
+              - generic [ref=e154]: name="getTransactionsByMonthAndType"
+              - generic [ref=e155]: type="tns:getTransactionsByMonthAndType"
+              - text: />
+            - generic [ref=e157]:
+              - text: <xs:element
+              - generic [ref=e158]: name="getTransactionsByMonthAndTypeResponse"
+              - generic [ref=e159]: type="tns:getTransactionsByMonthAndTypeResponse"
+              - text: />
+            - generic [ref=e161]:
+              - text: <xs:element
+              - generic [ref=e162]: name="getTransactionsByToFromDate"
+              - generic [ref=e163]: type="tns:getTransactionsByToFromDate"
+              - text: />
+            - generic [ref=e165]:
+              - text: <xs:element
+              - generic [ref=e166]: name="getTransactionsByToFromDateResponse"
+              - generic [ref=e167]: type="tns:getTransactionsByToFromDateResponse"
+              - text: />
+            - generic [ref=e169]:
+              - text: <xs:element
+              - generic [ref=e170]: name="getTransactionsOnDate"
+              - generic [ref=e171]: type="tns:getTransactionsOnDate"
+              - text: />
+            - generic [ref=e173]:
+              - text: <xs:element
+              - generic [ref=e174]: name="getTransactionsOnDateResponse"
+              - generic [ref=e175]: type="tns:getTransactionsOnDateResponse"
+              - text: />
+            - generic [ref=e177]:
+              - text: <xs:element
+              - generic [ref=e178]: name="getTransactionsResponse"
+              - generic [ref=e179]: type="tns:getTransactionsResponse"
+              - text: />
+            - generic [ref=e181]:
+              - text: <xs:element
+              - generic [ref=e182]: name="historyPoint"
+              - generic [ref=e183]: type="tns:historyPoint"
+              - text: />
+            - generic [ref=e185]:
+              - text: <xs:element
+              - generic [ref=e186]: name="initializeDB"
+              - generic [ref=e187]: type="tns:initializeDB"
+              - text: />
+            - generic [ref=e189]:
+              - text: <xs:element
+              - generic [ref=e190]: name="initializeDBResponse"
+              - generic [ref=e191]: type="tns:initializeDBResponse"
+              - text: />
+            - generic [ref=e193]:
+              - text: <xs:element
+              - generic [ref=e194]: name="loanResponse"
+              - generic [ref=e195]: type="tns:loanResponse"
+              - text: />
+            - generic [ref=e197]:
+              - text: <xs:element
+              - generic [ref=e198]: name="login"
+              - generic [ref=e199]: type="tns:login"
+              - text: />
+            - generic [ref=e201]:
+              - text: <xs:element
+              - generic [ref=e202]: name="loginResponse"
+              - generic [ref=e203]: type="tns:loginResponse"
+              - text: />
+            - generic [ref=e205]:
+              - text: <xs:element
+              - generic [ref=e206]: name="payee"
+              - generic [ref=e207]: type="tns:payee"
+              - text: />
+            - generic [ref=e209]:
+              - text: <xs:element
+              - generic [ref=e210]: name="position"
+              - generic [ref=e211]: type="tns:position"
+              - text: />
+            - generic [ref=e213]:
+              - text: <xs:element
+              - generic [ref=e214]: name="requestLoan"
+              - generic [ref=e215]: type="tns:requestLoan"
+              - text: />
+            - generic [ref=e217]:
+              - text: <xs:element
+              - generic [ref=e218]: name="requestLoanResponse"
+              - generic [ref=e219]: type="tns:requestLoanResponse"
+              - text: />
+            - generic [ref=e221]:
+              - text: <xs:element
+              - generic [ref=e222]: name="sellPosition"
+              - generic [ref=e223]: type="tns:sellPosition"
+              - text: />
+            - generic [ref=e225]:
+              - text: <xs:element
+              - generic [ref=e226]: name="sellPositionResponse"
+              - generic [ref=e227]: type="tns:sellPositionResponse"
+              - text: />
+            - generic [ref=e229]:
+              - text: <xs:element
+              - generic [ref=e230]: name="setParameter"
+              - generic [ref=e231]: type="tns:setParameter"
+              - text: />
+            - generic [ref=e233]:
+              - text: <xs:element
+              - generic [ref=e234]: name="setParameterResponse"
+              - generic [ref=e235]: type="tns:setParameterResponse"
+              - text: />
+            - generic [ref=e237]:
+              - text: <xs:element
+              - generic [ref=e238]: name="shutdownJmsListener"
+              - generic [ref=e239]: type="tns:shutdownJmsListener"
+              - text: />
+            - generic [ref=e241]:
+              - text: <xs:element
+              - generic [ref=e242]: name="shutdownJmsListenerResponse"
+              - generic [ref=e243]: type="tns:shutdownJmsListenerResponse"
+              - text: />
+            - generic [ref=e245]:
+              - text: <xs:element
+              - generic [ref=e246]: name="startupJmsListener"
+              - generic [ref=e247]: type="tns:startupJmsListener"
+              - text: />
+            - generic [ref=e249]:
+              - text: <xs:element
+              - generic [ref=e250]: name="startupJmsListenerResponse"
+              - generic [ref=e251]: type="tns:startupJmsListenerResponse"
+              - text: />
+            - generic [ref=e253]:
+              - text: <xs:element
+              - generic [ref=e254]: name="transaction"
+              - generic [ref=e255]: type="tns:transaction"
+              - text: />
+            - generic [ref=e257]:
+              - text: <xs:element
+              - generic [ref=e258]: name="transfer"
+              - generic [ref=e259]: type="tns:transfer"
+              - text: />
+            - generic [ref=e261]:
+              - text: <xs:element
+              - generic [ref=e262]: name="transferResponse"
+              - generic [ref=e263]: type="tns:transferResponse"
+              - text: />
+            - generic [ref=e265]:
+              - text: <xs:element
+              - generic [ref=e266]: name="updateCustomer"
+              - generic [ref=e267]: type="tns:updateCustomer"
+              - text: />
+            - generic [ref=e269]:
+              - text: <xs:element
+              - generic [ref=e270]: name="updateCustomerResponse"
+              - generic [ref=e271]: type="tns:updateCustomerResponse"
+              - text: />
+            - generic [ref=e273]:
+              - text: <xs:element
+              - generic [ref=e274]: name="withdraw"
+              - generic [ref=e275]: type="tns:withdraw"
+              - text: />
+            - generic [ref=e277]:
+              - text: <xs:element
+              - generic [ref=e278]: name="withdrawResponse"
+              - generic [ref=e279]: type="tns:withdrawResponse"
+              - text: />
+            - generic [ref=e280]:
+              - generic [ref=e283]:
+                - text: <xs:complexType
+                - generic [ref=e284]: name="startupJmsListener"
+                - text: ">"
+              - generic [ref=e287]: <xs:sequence/>
+              - generic [ref=e289]: </xs:complexType>
+            - generic [ref=e290]:
+              - generic [ref=e293]:
+                - text: <xs:complexType
+                - generic [ref=e294]: name="startupJmsListenerResponse"
+                - text: ">"
+              - generic [ref=e297]: <xs:sequence/>
+              - generic [ref=e299]: </xs:complexType>
+            - generic [ref=e300]:
+              - generic [ref=e303]:
+                - text: <xs:complexType
+                - generic [ref=e304]: name="buyPosition"
+                - text: ">"
+              - generic [ref=e306]:
+                - generic [ref=e309]: <xs:sequence>
+                - generic [ref=e310]:
+                  - generic [ref=e312]:
+                    - text: <xs:element
+                    - generic [ref=e313]: name="customerId"
+                    - generic [ref=e314]: type="xs:int"
+                    - text: />
+                  - generic [ref=e316]:
+                    - text: <xs:element
+                    - generic [ref=e317]: name="accountId"
+                    - generic [ref=e318]: type="xs:int"
+                    - text: />
+                  - generic [ref=e320]:
+                    - text: <xs:element
+                    - generic [ref=e321]: name="name"
+                    - generic [ref=e322]: type="xs:string"
+                    - text: />
+                  - generic [ref=e324]:
+                    - text: <xs:element
+                    - generic [ref=e325]: name="symbol"
+                    - generic [ref=e326]: type="xs:string"
+                    - text: />
+                  - generic [ref=e328]:
+                    - text: <xs:element
+                    - generic [ref=e329]: name="shares"
+                    - generic [ref=e330]: type="xs:int"
+                    - text: />
+                  - generic [ref=e332]:
+                    - text: <xs:element
+                    - generic [ref=e333]: name="pricePerShare"
+                    - generic [ref=e334]: type="xs:decimal"
+                    - text: />
+                - generic [ref=e336]: </xs:sequence>
+              - generic [ref=e338]: </xs:complexType>
+            - generic [ref=e339]:
+              - generic [ref=e342]:
+                - text: <xs:complexType
+                - generic [ref=e343]: name="buyPositionResponse"
+                - text: ">"
+              - generic [ref=e345]:
+                - generic [ref=e348]: <xs:sequence>
+                - generic [ref=e351]:
+                  - text: <xs:element
+                  - generic [ref=e352]: maxOccurs="unbounded"
+                  - generic [ref=e353]: ref="tns:position"
+                  - text: />
+                - generic [ref=e355]: </xs:sequence>
+              - generic [ref=e357]: </xs:complexType>
+            - generic [ref=e358]:
+              - generic [ref=e361]:
+                - text: <xs:complexType
+                - generic [ref=e362]: name="position"
+                - text: ">"
+              - generic [ref=e364]:
+                - generic [ref=e367]: <xs:sequence>
+                - generic [ref=e368]:
+                  - generic [ref=e370]:
+                    - text: <xs:element
+                    - generic [ref=e371]: form="unqualified"
+                    - generic [ref=e372]: name="positionId"
+                    - generic [ref=e373]: type="xs:int"
+                    - text: />
+                  - generic [ref=e375]:
+                    - text: <xs:element
+                    - generic [ref=e376]: form="unqualified"
+                    - generic [ref=e377]: name="customerId"
+                    - generic [ref=e378]: type="xs:int"
+                    - text: />
+                  - generic [ref=e380]:
+                    - text: <xs:element
+                    - generic [ref=e381]: form="unqualified"
+                    - generic [ref=e382]: minOccurs="0"
+                    - generic [ref=e383]: name="name"
+                    - generic [ref=e384]: type="xs:string"
+                    - text: />
+                  - generic [ref=e386]:
+                    - text: <xs:element
+                    - generic [ref=e387]: form="unqualified"
+                    - generic [ref=e388]: minOccurs="0"
+                    - generic [ref=e389]: name="symbol"
+                    - generic [ref=e390]: type="xs:string"
+                    - text: />
+                  - generic [ref=e392]:
+                    - text: <xs:element
+                    - generic [ref=e393]: form="unqualified"
+                    - generic [ref=e394]: name="shares"
+                    - generic [ref=e395]: type="xs:int"
+                    - text: />
+                  - generic [ref=e397]:
+                    - text: <xs:element
+                    - generic [ref=e398]: form="unqualified"
+                    - generic [ref=e399]: minOccurs="0"
+                    - generic [ref=e400]: name="purchasePrice"
+                    - generic [ref=e401]: type="xs:decimal"
+                    - text: />
+                - generic [ref=e403]: </xs:sequence>
+              - generic [ref=e405]: </xs:complexType>
+            - generic [ref=e406]:
+              - generic [ref=e409]:
+                - text: <xs:complexType
+                - generic [ref=e410]: name="getCustomer"
+                - text: ">"
+              - generic [ref=e412]:
+                - generic [ref=e415]: <xs:sequence>
+                - generic [ref=e418]:
+                  - text: <xs:element
+                  - generic [ref=e419]: name="customerId"
+                  - generic [ref=e420]: type="xs:int"
+                  - text: />
+                - generic [ref=e422]: </xs:sequence>
+              - generic [ref=e424]: </xs:complexType>
+            - generic [ref=e425]:
+              - generic [ref=e428]:
+                - text: <xs:complexType
+                - generic [ref=e429]: name="getCustomerResponse"
+                - text: ">"
+              - generic [ref=e431]:
+                - generic [ref=e434]: <xs:sequence>
+                - generic [ref=e437]:
+                  - text: <xs:element
+                  - generic [ref=e438]: ref="tns:customer"
+                  - text: />
+                - generic [ref=e440]: </xs:sequence>
+              - generic [ref=e442]: </xs:complexType>
+            - generic [ref=e443]:
+              - generic [ref=e446]:
+                - text: <xs:complexType
+                - generic [ref=e447]: name="customer"
+                - text: ">"
+              - generic [ref=e449]:
+                - generic [ref=e452]: <xs:sequence>
+                - generic [ref=e453]:
+                  - generic [ref=e455]:
+                    - text: <xs:element
+                    - generic [ref=e456]: form="unqualified"
+                    - generic [ref=e457]: name="id"
+                    - generic [ref=e458]: type="xs:int"
+                    - text: />
+                  - generic [ref=e460]:
+                    - text: <xs:element
+                    - generic [ref=e461]: form="unqualified"
+                    - generic [ref=e462]: minOccurs="0"
+                    - generic [ref=e463]: name="firstName"
+                    - generic [ref=e464]: type="xs:string"
+                    - text: />
+                  - generic [ref=e466]:
+                    - text: <xs:element
+                    - generic [ref=e467]: form="unqualified"
+                    - generic [ref=e468]: minOccurs="0"
+                    - generic [ref=e469]: name="lastName"
+                    - generic [ref=e470]: type="xs:string"
+                    - text: />
+                  - generic [ref=e472]:
+                    - text: <xs:element
+                    - generic [ref=e473]: form="unqualified"
+                    - generic [ref=e474]: minOccurs="0"
+                    - generic [ref=e475]: name="address"
+                    - generic [ref=e476]: type="tns:address"
+                    - text: />
+                  - generic [ref=e478]:
+                    - text: <xs:element
+                    - generic [ref=e479]: form="unqualified"
+                    - generic [ref=e480]: minOccurs="0"
+                    - generic [ref=e481]: name="phoneNumber"
+                    - generic [ref=e482]: type="xs:string"
+                    - text: />
+                  - generic [ref=e484]:
+                    - text: <xs:element
+                    - generic [ref=e485]: form="unqualified"
+                    - generic [ref=e486]: minOccurs="0"
+                    - generic [ref=e487]: name="ssn"
+                    - generic [ref=e488]: type="xs:string"
+                    - text: />
+                - generic [ref=e490]: </xs:sequence>
+              - generic [ref=e492]: </xs:complexType>
+            - generic [ref=e493]:
+              - generic [ref=e496]:
+                - text: <xs:complexType
+                - generic [ref=e497]: name="address"
+                - text: ">"
+              - generic [ref=e499]:
+                - generic [ref=e502]: <xs:sequence>
+                - generic [ref=e503]:
+                  - generic [ref=e505]:
+                    - text: <xs:element
+                    - generic [ref=e506]: form="unqualified"
+                    - generic [ref=e507]: minOccurs="0"
+                    - generic [ref=e508]: name="street"
+                    - generic [ref=e509]: type="xs:string"
+                    - text: />
+                  - generic [ref=e511]:
+                    - text: <xs:element
+                    - generic [ref=e512]: form="unqualified"
+                    - generic [ref=e513]: minOccurs="0"
+                    - generic [ref=e514]: name="city"
+                    - generic [ref=e515]: type="xs:string"
+                    - text: />
+                  - generic [ref=e517]:
+                    - text: <xs:element
+                    - generic [ref=e518]: form="unqualified"
+                    - generic [ref=e519]: minOccurs="0"
+                    - generic [ref=e520]: name="state"
+                    - generic [ref=e521]: type="xs:string"
+                    - text: />
+                  - generic [ref=e523]:
+                    - text: <xs:element
+                    - generic [ref=e524]: form="unqualified"
+                    - generic [ref=e525]: minOccurs="0"
+                    - generic [ref=e526]: name="zipCode"
+                    - generic [ref=e527]: type="xs:string"
+                    - text: />
+                - generic [ref=e529]: </xs:sequence>
+              - generic [ref=e531]: </xs:complexType>
+            - generic [ref=e532]:
+              - generic [ref=e535]:
+                - text: <xs:complexType
+                - generic [ref=e536]: name="initializeDB"
+                - text: ">"
+              - generic [ref=e539]: <xs:sequence/>
+              - generic [ref=e541]: </xs:complexType>
+            - generic [ref=e542]:
+              - generic [ref=e545]:
+                - text: <xs:complexType
+                - generic [ref=e546]: name="initializeDBResponse"
+                - text: ">"
+              - generic [ref=e549]: <xs:sequence/>
+              - generic [ref=e551]: </xs:complexType>
+            - generic [ref=e552]:
+              - generic [ref=e555]:
+                - text: <xs:complexType
+                - generic [ref=e556]: name="createAccount"
+                - text: ">"
+              - generic [ref=e558]:
+                - generic [ref=e561]: <xs:sequence>
+                - generic [ref=e562]:
+                  - generic [ref=e564]:
+                    - text: <xs:element
+                    - generic [ref=e565]: name="customerId"
+                    - generic [ref=e566]: type="xs:int"
+                    - text: />
+                  - generic [ref=e568]:
+                    - text: <xs:element
+                    - generic [ref=e569]: name="newAccountType"
+                    - generic [ref=e570]: type="xs:int"
+                    - text: />
+                  - generic [ref=e572]:
+                    - text: <xs:element
+                    - generic [ref=e573]: name="fromAccountId"
+                    - generic [ref=e574]: type="xs:int"
+                    - text: />
+                - generic [ref=e576]: </xs:sequence>
+              - generic [ref=e578]: </xs:complexType>
+            - generic [ref=e579]:
+              - generic [ref=e582]:
+                - text: <xs:complexType
+                - generic [ref=e583]: name="createAccountResponse"
+                - text: ">"
+              - generic [ref=e585]:
+                - generic [ref=e588]: <xs:sequence>
+                - generic [ref=e591]:
+                  - text: <xs:element
+                  - generic [ref=e592]: ref="tns:account"
+                  - text: />
+                - generic [ref=e594]: </xs:sequence>
+              - generic [ref=e596]: </xs:complexType>
+            - generic [ref=e597]:
+              - generic [ref=e600]:
+                - text: <xs:complexType
+                - generic [ref=e601]: name="account"
+                - text: ">"
+              - generic [ref=e603]:
+                - generic [ref=e606]: <xs:sequence>
+                - generic [ref=e607]:
+                  - generic [ref=e609]:
+                    - text: <xs:element
+                    - generic [ref=e610]: form="unqualified"
+                    - generic [ref=e611]: name="id"
+                    - generic [ref=e612]: type="xs:int"
+                    - text: />
+                  - generic [ref=e614]:
+                    - text: <xs:element
+                    - generic [ref=e615]: form="unqualified"
+                    - generic [ref=e616]: name="customerId"
+                    - generic [ref=e617]: type="xs:int"
+                    - text: />
+                  - generic [ref=e619]:
+                    - text: <xs:element
+                    - generic [ref=e620]: form="unqualified"
+                    - generic [ref=e621]: minOccurs="0"
+                    - generic [ref=e622]: name="type"
+                    - generic [ref=e623]: type="tns:accountType"
+                    - text: />
+                  - generic [ref=e625]:
+                    - text: <xs:element
+                    - generic [ref=e626]: form="unqualified"
+                    - generic [ref=e627]: minOccurs="0"
+                    - generic [ref=e628]: name="balance"
+                    - generic [ref=e629]: type="xs:decimal"
+                    - text: />
+                - generic [ref=e631]: </xs:sequence>
+              - generic [ref=e633]: </xs:complexType>
+            - generic [ref=e634]:
+              - generic [ref=e637]:
+                - text: <xs:complexType
+                - generic [ref=e638]: name="getAccounts"
+                - text: ">"
+              - generic [ref=e640]:
+                - generic [ref=e643]: <xs:sequence>
+                - generic [ref=e646]:
+                  - text: <xs:element
+                  - generic [ref=e647]: name="customerId"
+                  - generic [ref=e648]: type="xs:int"
+                  - text: />
+                - generic [ref=e650]: </xs:sequence>
+              - generic [ref=e652]: </xs:complexType>
+            - generic [ref=e653]:
+              - generic [ref=e656]:
+                - text: <xs:complexType
+                - generic [ref=e657]: name="getAccountsResponse"
+                - text: ">"
+              - generic [ref=e659]:
+                - generic [ref=e662]: <xs:sequence>
+                - generic [ref=e665]:
+                  - text: <xs:element
+                  - generic [ref=e666]: maxOccurs="unbounded"
+                  - generic [ref=e667]: ref="tns:account"
+                  - text: />
+                - generic [ref=e669]: </xs:sequence>
+              - generic [ref=e671]: </xs:complexType>
+            - generic [ref=e672]:
+              - generic [ref=e675]:
+                - text: <xs:complexType
+                - generic [ref=e676]: name="getTransactions"
+                - text: ">"
+              - generic [ref=e678]:
+                - generic [ref=e681]: <xs:sequence>
+                - generic [ref=e684]:
+                  - text: <xs:element
+                  - generic [ref=e685]: name="accountId"
+                  - generic [ref=e686]: type="xs:int"
+                  - text: />
+                - generic [ref=e688]: </xs:sequence>
+              - generic [ref=e690]: </xs:complexType>
+            - generic [ref=e691]:
+              - generic [ref=e694]:
+                - text: <xs:complexType
+                - generic [ref=e695]: name="getTransactionsResponse"
+                - text: ">"
+              - generic [ref=e697]:
+                - generic [ref=e700]: <xs:sequence>
+                - generic [ref=e703]:
+                  - text: <xs:element
+                  - generic [ref=e704]: maxOccurs="unbounded"
+                  - generic [ref=e705]: ref="tns:transaction"
+                  - text: />
+                - generic [ref=e707]: </xs:sequence>
+              - generic [ref=e709]: </xs:complexType>
+            - generic [ref=e710]:
+              - generic [ref=e713]:
+                - text: <xs:complexType
+                - generic [ref=e714]: name="transaction"
+                - text: ">"
+              - generic [ref=e716]:
+                - generic [ref=e719]: <xs:sequence>
+                - generic [ref=e720]:
+                  - generic [ref=e722]:
+                    - text: <xs:element
+                    - generic [ref=e723]: form="unqualified"
+                    - generic [ref=e724]: name="id"
+                    - generic [ref=e725]: type="xs:int"
+                    - text: />
+                  - generic [ref=e727]:
+                    - text: <xs:element
+                    - generic [ref=e728]: form="unqualified"
+                    - generic [ref=e729]: name="accountId"
+                    - generic [ref=e730]: type="xs:int"
+                    - text: />
+                  - generic [ref=e732]:
+                    - text: <xs:element
+                    - generic [ref=e733]: form="unqualified"
+                    - generic [ref=e734]: minOccurs="0"
+                    - generic [ref=e735]: name="type"
+                    - generic [ref=e736]: type="tns:transactionType"
+                    - text: />
+                  - generic [ref=e738]:
+                    - text: <xs:element
+                    - generic [ref=e739]: form="unqualified"
+                    - generic [ref=e740]: minOccurs="0"
+                    - generic [ref=e741]: name="date"
+                    - generic [ref=e742]: type="xs:dateTime"
+                    - text: />
+                  - generic [ref=e744]:
+                    - text: <xs:element
+                    - generic [ref=e745]: form="unqualified"
+                    - generic [ref=e746]: minOccurs="0"
+                    - generic [ref=e747]: name="amount"
+                    - generic [ref=e748]: type="xs:decimal"
+                    - text: />
+                  - generic [ref=e750]:
+                    - text: <xs:element
+                    - generic [ref=e751]: form="unqualified"
+                    - generic [ref=e752]: minOccurs="0"
+                    - generic [ref=e753]: name="description"
+                    - generic [ref=e754]: type="xs:string"
+                    - text: />
+                - generic [ref=e756]: </xs:sequence>
+              - generic [ref=e758]: </xs:complexType>
+            - generic [ref=e759]:
+              - generic [ref=e762]:
+                - text: <xs:complexType
+                - generic [ref=e763]: name="getTransactionsOnDate"
+                - text: ">"
+              - generic [ref=e765]:
+                - generic [ref=e768]: <xs:sequence>
+                - generic [ref=e769]:
+                  - generic [ref=e771]:
+                    - text: <xs:element
+                    - generic [ref=e772]: name="accountId"
+                    - generic [ref=e773]: type="xs:int"
+                    - text: />
+                  - generic [ref=e775]:
+                    - text: <xs:element
+                    - generic [ref=e776]: name="onDate"
+                    - generic [ref=e777]: type="xs:string"
+                    - text: />
+                - generic [ref=e779]: </xs:sequence>
+              - generic [ref=e781]: </xs:complexType>
+            - generic [ref=e782]:
+              - generic [ref=e785]:
+                - text: <xs:complexType
+                - generic [ref=e786]: name="getTransactionsOnDateResponse"
+                - text: ">"
+              - generic [ref=e788]:
+                - generic [ref=e791]: <xs:sequence>
+                - generic [ref=e794]:
+                  - text: <xs:element
+                  - generic [ref=e795]: maxOccurs="unbounded"
+                  - generic [ref=e796]: ref="tns:transaction"
+                  - text: />
+                - generic [ref=e798]: </xs:sequence>
+              - generic [ref=e800]: </xs:complexType>
+            - generic [ref=e801]:
+              - generic [ref=e804]:
+                - text: <xs:complexType
+                - generic [ref=e805]: name="withdraw"
+                - text: ">"
+              - generic [ref=e807]:
+                - generic [ref=e810]: <xs:sequence>
+                - generic [ref=e811]:
+                  - generic [ref=e813]:
+                    - text: <xs:element
+                    - generic [ref=e814]: name="accountId"
+                    - generic [ref=e815]: type="xs:int"
+                    - text: />
+                  - generic [ref=e817]:
+                    - text: <xs:element
+                    - generic [ref=e818]: name="amount"
+                    - generic [ref=e819]: type="xs:decimal"
+                    - text: />
+                - generic [ref=e821]: </xs:sequence>
+              - generic [ref=e823]: </xs:complexType>
+            - generic [ref=e824]:
+              - generic [ref=e827]:
+                - text: <xs:complexType
+                - generic [ref=e828]: name="withdrawResponse"
+                - text: ">"
+              - generic [ref=e830]:
+                - generic [ref=e833]: <xs:sequence>
+                - generic [ref=e836]:
+                  - text: <xs:element
+                  - generic [ref=e837]: name="withdrawReturn"
+                  - generic [ref=e838]: type="xs:string"
+                  - text: />
+                - generic [ref=e840]: </xs:sequence>
+              - generic [ref=e842]: </xs:complexType>
+            - generic [ref=e843]:
+              - generic [ref=e846]:
+                - text: <xs:complexType
+                - generic [ref=e847]: name="updateCustomer"
+                - text: ">"
+              - generic [ref=e849]:
+                - generic [ref=e852]: <xs:sequence>
+                - generic [ref=e853]:
+                  - generic [ref=e855]:
+                    - text: <xs:element
+                    - generic [ref=e856]: name="customerId"
+                    - generic [ref=e857]: type="xs:int"
+                    - text: />
+                  - generic [ref=e859]:
+                    - text: <xs:element
+                    - generic [ref=e860]: name="firstName"
+                    - generic [ref=e861]: type="xs:string"
+                    - text: />
+                  - generic [ref=e863]:
+                    - text: <xs:element
+                    - generic [ref=e864]: name="lastName"
+                    - generic [ref=e865]: type="xs:string"
+                    - text: />
+                  - generic [ref=e867]:
+                    - text: <xs:element
+                    - generic [ref=e868]: name="street"
+                    - generic [ref=e869]: type="xs:string"
+                    - text: />
+                  - generic [ref=e871]:
+                    - text: <xs:element
+                    - generic [ref=e872]: name="city"
+                    - generic [ref=e873]: type="xs:string"
+                    - text: />
+                  - generic [ref=e875]:
+                    - text: <xs:element
+                    - generic [ref=e876]: name="state"
+                    - generic [ref=e877]: type="xs:string"
+                    - text: />
+                  - generic [ref=e879]:
+                    - text: <xs:element
+                    - generic [ref=e880]: name="zipCode"
+                    - generic [ref=e881]: type="xs:string"
+                    - text: />
+                  - generic [ref=e883]:
+                    - text: <xs:element
+                    - generic [ref=e884]: name="phoneNumber"
+                    - generic [ref=e885]: type="xs:string"
+                    - text: />
+                  - generic [ref=e887]:
+                    - text: <xs:element
+                    - generic [ref=e888]: name="ssn"
+                    - generic [ref=e889]: type="xs:string"
+                    - text: />
+                  - generic [ref=e891]:
+                    - text: <xs:element
+                    - generic [ref=e892]: name="username"
+                    - generic [ref=e893]: type="xs:string"
+                    - text: />
+                  - generic [ref=e895]:
+                    - text: <xs:element
+                    - generic [ref=e896]: name="password"
+                    - generic [ref=e897]: type="xs:string"
+                    - text: />
+                - generic [ref=e899]: </xs:sequence>
+              - generic [ref=e901]: </xs:complexType>
+            - generic [ref=e902]:
+              - generic [ref=e905]:
+                - text: <xs:complexType
+                - generic [ref=e906]: name="updateCustomerResponse"
+                - text: ">"
+              - generic [ref=e908]:
+                - generic [ref=e911]: <xs:sequence>
+                - generic [ref=e914]:
+                  - text: <xs:element
+                  - generic [ref=e915]: name="customerUpdateResult"
+                  - generic [ref=e916]: type="xs:string"
+                  - text: />
+                - generic [ref=e918]: </xs:sequence>
+              - generic [ref=e920]: </xs:complexType>
+            - generic [ref=e921]:
+              - generic [ref=e924]:
+                - text: <xs:complexType
+                - generic [ref=e925]: name="deposit"
+                - text: ">"
+              - generic [ref=e927]:
+                - generic [ref=e930]: <xs:sequence>
+                - generic [ref=e931]:
+                  - generic [ref=e933]:
+                    - text: <xs:element
+                    - generic [ref=e934]: name="accountId"
+                    - generic [ref=e935]: type="xs:int"
+                    - text: />
+                  - generic [ref=e937]:
+                    - text: <xs:element
+                    - generic [ref=e938]: name="amount"
+                    - generic [ref=e939]: type="xs:decimal"
+                    - text: />
+                - generic [ref=e941]: </xs:sequence>
+              - generic [ref=e943]: </xs:complexType>
+            - generic [ref=e944]:
+              - generic [ref=e947]:
+                - text: <xs:complexType
+                - generic [ref=e948]: name="depositResponse"
+                - text: ">"
+              - generic [ref=e950]:
+                - generic [ref=e953]: <xs:sequence>
+                - generic [ref=e956]:
+                  - text: <xs:element
+                  - generic [ref=e957]: name="depositReturn"
+                  - generic [ref=e958]: type="xs:string"
+                  - text: />
+                - generic [ref=e960]: </xs:sequence>
+              - generic [ref=e962]: </xs:complexType>
+            - generic [ref=e963]:
+              - generic [ref=e966]:
+                - text: <xs:complexType
+                - generic [ref=e967]: name="getTransactionsByToFromDate"
+                - text: ">"
+              - generic [ref=e969]:
+                - generic [ref=e972]: <xs:sequence>
+                - generic [ref=e973]:
+                  - generic [ref=e975]:
+                    - text: <xs:element
+                    - generic [ref=e976]: name="accountId"
+                    - generic [ref=e977]: type="xs:int"
+                    - text: />
+                  - generic [ref=e979]:
+                    - text: <xs:element
+                    - generic [ref=e980]: name="fromDate"
+                    - generic [ref=e981]: type="xs:string"
+                    - text: />
+                  - generic [ref=e983]:
+                    - text: <xs:element
+                    - generic [ref=e984]: name="toDate"
+                    - generic [ref=e985]: type="xs:string"
+                    - text: />
+                - generic [ref=e987]: </xs:sequence>
+              - generic [ref=e989]: </xs:complexType>
+            - generic [ref=e990]:
+              - generic [ref=e993]:
+                - text: <xs:complexType
+                - generic [ref=e994]: name="getTransactionsByToFromDateResponse"
+                - text: ">"
+              - generic [ref=e996]:
+                - generic [ref=e999]: <xs:sequence>
+                - generic [ref=e1002]:
+                  - text: <xs:element
+                  - generic [ref=e1003]: maxOccurs="unbounded"
+                  - generic [ref=e1004]: ref="tns:transaction"
+                  - text: />
+                - generic [ref=e1006]: </xs:sequence>
+              - generic [ref=e1008]: </xs:complexType>
+            - generic [ref=e1009]:
+              - generic [ref=e1012]:
+                - text: <xs:complexType
+                - generic [ref=e1013]: name="shutdownJmsListener"
+                - text: ">"
+              - generic [ref=e1016]: <xs:sequence/>
+              - generic [ref=e1018]: </xs:complexType>
+            - generic [ref=e1019]:
+              - generic [ref=e1022]:
+                - text: <xs:complexType
+                - generic [ref=e1023]: name="shutdownJmsListenerResponse"
+                - text: ">"
+              - generic [ref=e1026]: <xs:sequence/>
+              - generic [ref=e1028]: </xs:complexType>
+            - generic [ref=e1029]:
+              - generic [ref=e1032]:
+                - text: <xs:complexType
+                - generic [ref=e1033]: name="getPosition"
+                - text: ">"
+              - generic [ref=e1035]:
+                - generic [ref=e1038]: <xs:sequence>
+                - generic [ref=e1041]:
+                  - text: <xs:element
+                  - generic [ref=e1042]: name="positionId"
+                  - generic [ref=e1043]: type="xs:int"
+                  - text: />
+                - generic [ref=e1045]: </xs:sequence>
+              - generic [ref=e1047]: </xs:complexType>
+            - generic [ref=e1048]:
+              - generic [ref=e1051]:
+                - text: <xs:complexType
+                - generic [ref=e1052]: name="getPositionResponse"
+                - text: ">"
+              - generic [ref=e1054]:
+                - generic [ref=e1057]: <xs:sequence>
+                - generic [ref=e1060]:
+                  - text: <xs:element
+                  - generic [ref=e1061]: ref="tns:position"
+                  - text: />
+                - generic [ref=e1063]: </xs:sequence>
+              - generic [ref=e1065]: </xs:complexType>
+            - generic [ref=e1066]:
+              - generic [ref=e1069]:
+                - text: <xs:complexType
+                - generic [ref=e1070]: name="transfer"
+                - text: ">"
+              - generic [ref=e1072]:
+                - generic [ref=e1075]: <xs:sequence>
+                - generic [ref=e1076]:
+                  - generic [ref=e1078]:
+                    - text: <xs:element
+                    - generic [ref=e1079]: name="fromAccountId"
+                    - generic [ref=e1080]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1082]:
+                    - text: <xs:element
+                    - generic [ref=e1083]: name="toAccountId"
+                    - generic [ref=e1084]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1086]:
+                    - text: <xs:element
+                    - generic [ref=e1087]: name="amount"
+                    - generic [ref=e1088]: type="xs:decimal"
+                    - text: />
+                - generic [ref=e1090]: </xs:sequence>
+              - generic [ref=e1092]: </xs:complexType>
+            - generic [ref=e1093]:
+              - generic [ref=e1096]:
+                - text: <xs:complexType
+                - generic [ref=e1097]: name="transferResponse"
+                - text: ">"
+              - generic [ref=e1099]:
+                - generic [ref=e1102]: <xs:sequence>
+                - generic [ref=e1105]:
+                  - text: <xs:element
+                  - generic [ref=e1106]: name="transferReturn"
+                  - generic [ref=e1107]: type="xs:string"
+                  - text: />
+                - generic [ref=e1109]: </xs:sequence>
+              - generic [ref=e1111]: </xs:complexType>
+            - generic [ref=e1112]:
+              - generic [ref=e1115]:
+                - text: <xs:complexType
+                - generic [ref=e1116]: name="login"
+                - text: ">"
+              - generic [ref=e1118]:
+                - generic [ref=e1121]: <xs:sequence>
+                - generic [ref=e1122]:
+                  - generic [ref=e1124]:
+                    - text: <xs:element
+                    - generic [ref=e1125]: name="username"
+                    - generic [ref=e1126]: type="xs:string"
+                    - text: />
+                  - generic [ref=e1128]:
+                    - text: <xs:element
+                    - generic [ref=e1129]: name="password"
+                    - generic [ref=e1130]: type="xs:string"
+                    - text: />
+                - generic [ref=e1132]: </xs:sequence>
+              - generic [ref=e1134]: </xs:complexType>
+            - generic [ref=e1135]:
+              - generic [ref=e1138]:
+                - text: <xs:complexType
+                - generic [ref=e1139]: name="loginResponse"
+                - text: ">"
+              - generic [ref=e1141]:
+                - generic [ref=e1144]: <xs:sequence>
+                - generic [ref=e1147]:
+                  - text: <xs:element
+                  - generic [ref=e1148]: name="customerId"
+                  - generic [ref=e1149]: type="tns:customer"
+                  - text: />
+                - generic [ref=e1151]: </xs:sequence>
+              - generic [ref=e1153]: </xs:complexType>
+            - generic [ref=e1154]:
+              - generic [ref=e1157]:
+                - text: <xs:complexType
+                - generic [ref=e1158]: name="getTransactionsByMonthAndType"
+                - text: ">"
+              - generic [ref=e1160]:
+                - generic [ref=e1163]: <xs:sequence>
+                - generic [ref=e1164]:
+                  - generic [ref=e1166]:
+                    - text: <xs:element
+                    - generic [ref=e1167]: name="accountId"
+                    - generic [ref=e1168]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1170]:
+                    - text: <xs:element
+                    - generic [ref=e1171]: name="month"
+                    - generic [ref=e1172]: type="xs:string"
+                    - text: />
+                  - generic [ref=e1174]:
+                    - text: <xs:element
+                    - generic [ref=e1175]: name="type"
+                    - generic [ref=e1176]: type="xs:string"
+                    - text: />
+                - generic [ref=e1178]: </xs:sequence>
+              - generic [ref=e1180]: </xs:complexType>
+            - generic [ref=e1181]:
+              - generic [ref=e1184]:
+                - text: <xs:complexType
+                - generic [ref=e1185]: name="getTransactionsByMonthAndTypeResponse"
+                - text: ">"
+              - generic [ref=e1187]:
+                - generic [ref=e1190]: <xs:sequence>
+                - generic [ref=e1193]:
+                  - text: <xs:element
+                  - generic [ref=e1194]: maxOccurs="unbounded"
+                  - generic [ref=e1195]: ref="tns:transaction"
+                  - text: />
+                - generic [ref=e1197]: </xs:sequence>
+              - generic [ref=e1199]: </xs:complexType>
+            - generic [ref=e1200]:
+              - generic [ref=e1203]:
+                - text: <xs:complexType
+                - generic [ref=e1204]: name="getPositionHistory"
+                - text: ">"
+              - generic [ref=e1206]:
+                - generic [ref=e1209]: <xs:sequence>
+                - generic [ref=e1210]:
+                  - generic [ref=e1212]:
+                    - text: <xs:element
+                    - generic [ref=e1213]: name="positionId"
+                    - generic [ref=e1214]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1216]:
+                    - text: <xs:element
+                    - generic [ref=e1217]: name="startDate"
+                    - generic [ref=e1218]: type="xs:string"
+                    - text: />
+                  - generic [ref=e1220]:
+                    - text: <xs:element
+                    - generic [ref=e1221]: name="endDate"
+                    - generic [ref=e1222]: type="xs:string"
+                    - text: />
+                - generic [ref=e1224]: </xs:sequence>
+              - generic [ref=e1226]: </xs:complexType>
+            - generic [ref=e1227]:
+              - generic [ref=e1230]:
+                - text: <xs:complexType
+                - generic [ref=e1231]: name="getPositionHistoryResponse"
+                - text: ">"
+              - generic [ref=e1233]:
+                - generic [ref=e1236]: <xs:sequence>
+                - generic [ref=e1239]:
+                  - text: <xs:element
+                  - generic [ref=e1240]: maxOccurs="unbounded"
+                  - generic [ref=e1241]: ref="tns:historyPoint"
+                  - text: />
+                - generic [ref=e1243]: </xs:sequence>
+              - generic [ref=e1245]: </xs:complexType>
+            - generic [ref=e1246]:
+              - generic [ref=e1249]:
+                - text: <xs:complexType
+                - generic [ref=e1250]: name="historyPoint"
+                - text: ">"
+              - generic [ref=e1252]:
+                - generic [ref=e1255]: <xs:sequence>
+                - generic [ref=e1256]:
+                  - generic [ref=e1258]:
+                    - text: <xs:element
+                    - generic [ref=e1259]: form="unqualified"
+                    - generic [ref=e1260]: minOccurs="0"
+                    - generic [ref=e1261]: name="symbol"
+                    - generic [ref=e1262]: type="xs:string"
+                    - text: />
+                  - generic [ref=e1264]:
+                    - text: <xs:element
+                    - generic [ref=e1265]: form="unqualified"
+                    - generic [ref=e1266]: minOccurs="0"
+                    - generic [ref=e1267]: name="date"
+                    - generic [ref=e1268]: type="xs:dateTime"
+                    - text: />
+                  - generic [ref=e1270]:
+                    - text: <xs:element
+                    - generic [ref=e1271]: form="unqualified"
+                    - generic [ref=e1272]: minOccurs="0"
+                    - generic [ref=e1273]: name="closingPrice"
+                    - generic [ref=e1274]: type="xs:decimal"
+                    - text: />
+                - generic [ref=e1276]: </xs:sequence>
+              - generic [ref=e1278]: </xs:complexType>
+            - generic [ref=e1279]:
+              - generic [ref=e1282]:
+                - text: <xs:complexType
+                - generic [ref=e1283]: name="getTransaction"
+                - text: ">"
+              - generic [ref=e1285]:
+                - generic [ref=e1288]: <xs:sequence>
+                - generic [ref=e1291]:
+                  - text: <xs:element
+                  - generic [ref=e1292]: name="transactionId"
+                  - generic [ref=e1293]: type="xs:int"
+                  - text: />
+                - generic [ref=e1295]: </xs:sequence>
+              - generic [ref=e1297]: </xs:complexType>
+            - generic [ref=e1298]:
+              - generic [ref=e1301]:
+                - text: <xs:complexType
+                - generic [ref=e1302]: name="getTransactionResponse"
+                - text: ">"
+              - generic [ref=e1304]:
+                - generic [ref=e1307]: <xs:sequence>
+                - generic [ref=e1310]:
+                  - text: <xs:element
+                  - generic [ref=e1311]: ref="tns:transaction"
+                  - text: />
+                - generic [ref=e1313]: </xs:sequence>
+              - generic [ref=e1315]: </xs:complexType>
+            - generic [ref=e1316]:
+              - generic [ref=e1319]:
+                - text: <xs:complexType
+                - generic [ref=e1320]: name="setParameter"
+                - text: ">"
+              - generic [ref=e1322]:
+                - generic [ref=e1325]: <xs:sequence>
+                - generic [ref=e1326]:
+                  - generic [ref=e1328]:
+                    - text: <xs:element
+                    - generic [ref=e1329]: name="name"
+                    - generic [ref=e1330]: type="xs:string"
+                    - text: />
+                  - generic [ref=e1332]:
+                    - text: <xs:element
+                    - generic [ref=e1333]: name="value"
+                    - generic [ref=e1334]: type="xs:string"
+                    - text: />
+                - generic [ref=e1336]: </xs:sequence>
+              - generic [ref=e1338]: </xs:complexType>
+            - generic [ref=e1339]:
+              - generic [ref=e1342]:
+                - text: <xs:complexType
+                - generic [ref=e1343]: name="setParameterResponse"
+                - text: ">"
+              - generic [ref=e1346]: <xs:sequence/>
+              - generic [ref=e1348]: </xs:complexType>
+            - generic [ref=e1349]:
+              - generic [ref=e1352]:
+                - text: <xs:complexType
+                - generic [ref=e1353]: name="getPositions"
+                - text: ">"
+              - generic [ref=e1355]:
+                - generic [ref=e1358]: <xs:sequence>
+                - generic [ref=e1361]:
+                  - text: <xs:element
+                  - generic [ref=e1362]: name="customerId"
+                  - generic [ref=e1363]: type="xs:int"
+                  - text: />
+                - generic [ref=e1365]: </xs:sequence>
+              - generic [ref=e1367]: </xs:complexType>
+            - generic [ref=e1368]:
+              - generic [ref=e1371]:
+                - text: <xs:complexType
+                - generic [ref=e1372]: name="getPositionsResponse"
+                - text: ">"
+              - generic [ref=e1374]:
+                - generic [ref=e1377]: <xs:sequence>
+                - generic [ref=e1380]:
+                  - text: <xs:element
+                  - generic [ref=e1381]: maxOccurs="unbounded"
+                  - generic [ref=e1382]: ref="tns:position"
+                  - text: />
+                - generic [ref=e1384]: </xs:sequence>
+              - generic [ref=e1386]: </xs:complexType>
+            - generic [ref=e1387]:
+              - generic [ref=e1390]:
+                - text: <xs:complexType
+                - generic [ref=e1391]: name="getTransactionsByAmount"
+                - text: ">"
+              - generic [ref=e1393]:
+                - generic [ref=e1396]: <xs:sequence>
+                - generic [ref=e1397]:
+                  - generic [ref=e1399]:
+                    - text: <xs:element
+                    - generic [ref=e1400]: name="accountId"
+                    - generic [ref=e1401]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1403]:
+                    - text: <xs:element
+                    - generic [ref=e1404]: name="amount"
+                    - generic [ref=e1405]: type="xs:decimal"
+                    - text: />
+                - generic [ref=e1407]: </xs:sequence>
+              - generic [ref=e1409]: </xs:complexType>
+            - generic [ref=e1410]:
+              - generic [ref=e1413]:
+                - text: <xs:complexType
+                - generic [ref=e1414]: name="getTransactionsByAmountResponse"
+                - text: ">"
+              - generic [ref=e1416]:
+                - generic [ref=e1419]: <xs:sequence>
+                - generic [ref=e1422]:
+                  - text: <xs:element
+                  - generic [ref=e1423]: maxOccurs="unbounded"
+                  - generic [ref=e1424]: ref="tns:transaction"
+                  - text: />
+                - generic [ref=e1426]: </xs:sequence>
+              - generic [ref=e1428]: </xs:complexType>
+            - generic [ref=e1429]:
+              - generic [ref=e1432]:
+                - text: <xs:complexType
+                - generic [ref=e1433]: name="sellPosition"
+                - text: ">"
+              - generic [ref=e1435]:
+                - generic [ref=e1438]: <xs:sequence>
+                - generic [ref=e1439]:
+                  - generic [ref=e1441]:
+                    - text: <xs:element
+                    - generic [ref=e1442]: name="customerId"
+                    - generic [ref=e1443]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1445]:
+                    - text: <xs:element
+                    - generic [ref=e1446]: name="accountId"
+                    - generic [ref=e1447]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1449]:
+                    - text: <xs:element
+                    - generic [ref=e1450]: name="positionId"
+                    - generic [ref=e1451]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1453]:
+                    - text: <xs:element
+                    - generic [ref=e1454]: name="shares"
+                    - generic [ref=e1455]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1457]:
+                    - text: <xs:element
+                    - generic [ref=e1458]: name="pricePerShare"
+                    - generic [ref=e1459]: type="xs:decimal"
+                    - text: />
+                - generic [ref=e1461]: </xs:sequence>
+              - generic [ref=e1463]: </xs:complexType>
+            - generic [ref=e1464]:
+              - generic [ref=e1467]:
+                - text: <xs:complexType
+                - generic [ref=e1468]: name="sellPositionResponse"
+                - text: ">"
+              - generic [ref=e1470]:
+                - generic [ref=e1473]: <xs:sequence>
+                - generic [ref=e1476]:
+                  - text: <xs:element
+                  - generic [ref=e1477]: maxOccurs="unbounded"
+                  - generic [ref=e1478]: ref="tns:position"
+                  - text: />
+                - generic [ref=e1480]: </xs:sequence>
+              - generic [ref=e1482]: </xs:complexType>
+            - generic [ref=e1483]:
+              - generic [ref=e1486]:
+                - text: <xs:complexType
+                - generic [ref=e1487]: name="cleanDB"
+                - text: ">"
+              - generic [ref=e1490]: <xs:sequence/>
+              - generic [ref=e1492]: </xs:complexType>
+            - generic [ref=e1493]:
+              - generic [ref=e1496]:
+                - text: <xs:complexType
+                - generic [ref=e1497]: name="cleanDBResponse"
+                - text: ">"
+              - generic [ref=e1500]: <xs:sequence/>
+              - generic [ref=e1502]: </xs:complexType>
+            - generic [ref=e1503]:
+              - generic [ref=e1506]:
+                - text: <xs:complexType
+                - generic [ref=e1507]: name="requestLoan"
+                - text: ">"
+              - generic [ref=e1509]:
+                - generic [ref=e1512]: <xs:sequence>
+                - generic [ref=e1513]:
+                  - generic [ref=e1515]:
+                    - text: <xs:element
+                    - generic [ref=e1516]: name="customerId"
+                    - generic [ref=e1517]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1519]:
+                    - text: <xs:element
+                    - generic [ref=e1520]: name="amount"
+                    - generic [ref=e1521]: type="xs:decimal"
+                    - text: />
+                  - generic [ref=e1523]:
+                    - text: <xs:element
+                    - generic [ref=e1524]: name="downPayment"
+                    - generic [ref=e1525]: type="xs:decimal"
+                    - text: />
+                  - generic [ref=e1527]:
+                    - text: <xs:element
+                    - generic [ref=e1528]: name="fromAccountId"
+                    - generic [ref=e1529]: type="xs:int"
+                    - text: />
+                - generic [ref=e1531]: </xs:sequence>
+              - generic [ref=e1533]: </xs:complexType>
+            - generic [ref=e1534]:
+              - generic [ref=e1537]:
+                - text: <xs:complexType
+                - generic [ref=e1538]: name="requestLoanResponse"
+                - text: ">"
+              - generic [ref=e1540]:
+                - generic [ref=e1543]: <xs:sequence>
+                - generic [ref=e1546]:
+                  - text: <xs:element
+                  - generic [ref=e1547]: ref="tns:loanResponse"
+                  - text: />
+                - generic [ref=e1549]: </xs:sequence>
+              - generic [ref=e1551]: </xs:complexType>
+            - generic [ref=e1552]:
+              - generic [ref=e1555]:
+                - text: <xs:complexType
+                - generic [ref=e1556]: name="loanResponse"
+                - text: ">"
+              - generic [ref=e1558]:
+                - generic [ref=e1561]: <xs:sequence>
+                - generic [ref=e1562]:
+                  - generic [ref=e1564]:
+                    - text: <xs:element
+                    - generic [ref=e1565]: form="unqualified"
+                    - generic [ref=e1566]: minOccurs="0"
+                    - generic [ref=e1567]: name="responseDate"
+                    - generic [ref=e1568]: type="xs:dateTime"
+                    - text: />
+                  - generic [ref=e1570]:
+                    - text: <xs:element
+                    - generic [ref=e1571]: form="unqualified"
+                    - generic [ref=e1572]: name="loanProviderName"
+                    - generic [ref=e1573]: type="xs:string"
+                    - text: />
+                  - generic [ref=e1575]:
+                    - text: <xs:element
+                    - generic [ref=e1576]: form="unqualified"
+                    - generic [ref=e1577]: name="approved"
+                    - generic [ref=e1578]: type="xs:boolean"
+                    - text: />
+                  - generic [ref=e1580]:
+                    - text: <xs:element
+                    - generic [ref=e1581]: form="unqualified"
+                    - generic [ref=e1582]: minOccurs="0"
+                    - generic [ref=e1583]: name="message"
+                    - generic [ref=e1584]: type="xs:string"
+                    - text: />
+                  - generic [ref=e1586]:
+                    - text: <xs:element
+                    - generic [ref=e1587]: form="unqualified"
+                    - generic [ref=e1588]: minOccurs="0"
+                    - generic [ref=e1589]: name="accountId"
+                    - generic [ref=e1590]: type="xs:int"
+                    - text: />
+                - generic [ref=e1592]: </xs:sequence>
+              - generic [ref=e1594]: </xs:complexType>
+            - generic [ref=e1595]:
+              - generic [ref=e1598]:
+                - text: <xs:complexType
+                - generic [ref=e1599]: name="getAccount"
+                - text: ">"
+              - generic [ref=e1601]:
+                - generic [ref=e1604]: <xs:sequence>
+                - generic [ref=e1607]:
+                  - text: <xs:element
+                  - generic [ref=e1608]: name="accountId"
+                  - generic [ref=e1609]: type="xs:int"
+                  - text: />
+                - generic [ref=e1611]: </xs:sequence>
+              - generic [ref=e1613]: </xs:complexType>
+            - generic [ref=e1614]:
+              - generic [ref=e1617]:
+                - text: <xs:complexType
+                - generic [ref=e1618]: name="getAccountResponse"
+                - text: ">"
+              - generic [ref=e1620]:
+                - generic [ref=e1623]: <xs:sequence>
+                - generic [ref=e1626]:
+                  - text: <xs:element
+                  - generic [ref=e1627]: ref="tns:account"
+                  - text: />
+                - generic [ref=e1629]: </xs:sequence>
+              - generic [ref=e1631]: </xs:complexType>
+            - generic [ref=e1632]:
+              - generic [ref=e1635]:
+                - text: <xs:complexType
+                - generic [ref=e1636]: name="billPay"
+                - text: ">"
+              - generic [ref=e1638]:
+                - generic [ref=e1641]: <xs:sequence>
+                - generic [ref=e1642]:
+                  - generic [ref=e1644]:
+                    - text: <xs:element
+                    - generic [ref=e1645]: name="arg0"
+                    - generic [ref=e1646]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1648]:
+                    - text: <xs:element
+                    - generic [ref=e1649]: name="arg1"
+                    - generic [ref=e1650]: type="xs:decimal"
+                    - text: />
+                  - generic [ref=e1652]:
+                    - text: <xs:element
+                    - generic [ref=e1653]: name="arg2"
+                    - generic [ref=e1654]: type="tns:payee"
+                    - text: />
+                - generic [ref=e1656]: </xs:sequence>
+              - generic [ref=e1658]: </xs:complexType>
+            - generic [ref=e1659]:
+              - generic [ref=e1662]:
+                - text: <xs:complexType
+                - generic [ref=e1663]: name="payee"
+                - text: ">"
+              - generic [ref=e1665]:
+                - generic [ref=e1668]: <xs:sequence>
+                - generic [ref=e1669]:
+                  - generic [ref=e1671]:
+                    - text: <xs:element
+                    - generic [ref=e1672]: form="unqualified"
+                    - generic [ref=e1673]: minOccurs="0"
+                    - generic [ref=e1674]: name="accountNumber"
+                    - generic [ref=e1675]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1677]:
+                    - text: <xs:element
+                    - generic [ref=e1678]: form="unqualified"
+                    - generic [ref=e1679]: minOccurs="0"
+                    - generic [ref=e1680]: name="address"
+                    - generic [ref=e1681]: type="tns:address"
+                    - text: />
+                  - generic [ref=e1683]:
+                    - text: <xs:element
+                    - generic [ref=e1684]: form="unqualified"
+                    - generic [ref=e1685]: minOccurs="0"
+                    - generic [ref=e1686]: name="name"
+                    - generic [ref=e1687]: type="xs:string"
+                    - text: />
+                  - generic [ref=e1689]:
+                    - text: <xs:element
+                    - generic [ref=e1690]: form="unqualified"
+                    - generic [ref=e1691]: minOccurs="0"
+                    - generic [ref=e1692]: name="phoneNumber"
+                    - generic [ref=e1693]: type="xs:string"
+                    - text: />
+                - generic [ref=e1695]: </xs:sequence>
+              - generic [ref=e1697]: </xs:complexType>
+            - generic [ref=e1698]:
+              - generic [ref=e1701]:
+                - text: <xs:complexType
+                - generic [ref=e1702]: name="billPayResponse"
+                - text: ">"
+              - generic [ref=e1704]:
+                - generic [ref=e1707]: <xs:sequence>
+                - generic [ref=e1710]:
+                  - text: <xs:element
+                  - generic [ref=e1711]: name="return"
+                  - generic [ref=e1712]: type="tns:billPayResult"
+                  - text: />
+                - generic [ref=e1714]: </xs:sequence>
+              - generic [ref=e1716]: </xs:complexType>
+            - generic [ref=e1717]:
+              - generic [ref=e1720]:
+                - text: <xs:complexType
+                - generic [ref=e1721]: name="billPayResult"
+                - text: ">"
+              - generic [ref=e1723]:
+                - generic [ref=e1726]: <xs:sequence>
+                - generic [ref=e1727]:
+                  - generic [ref=e1729]:
+                    - text: <xs:element
+                    - generic [ref=e1730]: form="unqualified"
+                    - generic [ref=e1731]: name="accountId"
+                    - generic [ref=e1732]: type="xs:int"
+                    - text: />
+                  - generic [ref=e1734]:
+                    - text: <xs:element
+                    - generic [ref=e1735]: form="unqualified"
+                    - generic [ref=e1736]: minOccurs="0"
+                    - generic [ref=e1737]: name="amount"
+                    - generic [ref=e1738]: type="xs:decimal"
+                    - text: />
+                  - generic [ref=e1740]:
+                    - text: <xs:element
+                    - generic [ref=e1741]: form="unqualified"
+                    - generic [ref=e1742]: minOccurs="0"
+                    - generic [ref=e1743]: name="payeeName"
+                    - generic [ref=e1744]: type="xs:string"
+                    - text: />
+                - generic [ref=e1746]: </xs:sequence>
+              - generic [ref=e1748]: </xs:complexType>
+            - generic [ref=e1749]:
+              - generic [ref=e1752]:
+                - text: <xs:simpleType
+                - generic [ref=e1753]: name="accountType"
+                - text: ">"
+              - generic [ref=e1755]:
+                - generic [ref=e1758]:
+                  - text: <xs:restriction
+                  - generic [ref=e1759]: base="xs:string"
+                  - text: ">"
+                - generic [ref=e1760]:
+                  - generic [ref=e1762]:
+                    - text: <xs:enumeration
+                    - generic [ref=e1763]: value="CHECKING"
+                    - text: />
+                  - generic [ref=e1765]:
+                    - text: <xs:enumeration
+                    - generic [ref=e1766]: value="SAVINGS"
+                    - text: />
+                  - generic [ref=e1768]:
+                    - text: <xs:enumeration
+                    - generic [ref=e1769]: value="LOAN"
+                    - text: />
+                - generic [ref=e1771]: </xs:restriction>
+              - generic [ref=e1773]: </xs:simpleType>
+            - generic [ref=e1774]:
+              - generic [ref=e1777]:
+                - text: <xs:simpleType
+                - generic [ref=e1778]: name="transactionType"
+                - text: ">"
+              - generic [ref=e1780]:
+                - generic [ref=e1783]:
+                  - text: <xs:restriction
+                  - generic [ref=e1784]: base="xs:string"
+                  - text: ">"
+                - generic [ref=e1785]:
+                  - generic [ref=e1787]:
+                    - text: <xs:enumeration
+                    - generic [ref=e1788]: value="Credit"
+                    - text: />
+                  - generic [ref=e1790]:
+                    - text: <xs:enumeration
+                    - generic [ref=e1791]: value="Debit"
+                    - text: />
+                - generic [ref=e1793]: </xs:restriction>
+              - generic [ref=e1795]: </xs:simpleType>
+            - generic [ref=e1797]:
+              - text: <xs:element
+              - generic [ref=e1798]: name="ParaBankServiceException"
+              - generic [ref=e1799]: type="tns:ParaBankServiceException"
+              - text: />
+            - generic [ref=e1800]:
+              - generic [ref=e1803]:
+                - text: <xs:complexType
+                - generic [ref=e1804]: name="ParaBankServiceException"
+                - text: ">"
+              - generic [ref=e1806]:
+                - generic [ref=e1809]: <xs:sequence>
+                - generic [ref=e1812]:
+                  - text: <xs:element
+                  - generic [ref=e1813]: minOccurs="0"
+                  - generic [ref=e1814]: name="message"
+                  - generic [ref=e1815]: type="xs:string"
+                  - text: />
+                - generic [ref=e1817]: </xs:sequence>
+              - generic [ref=e1819]: </xs:complexType>
+          - generic [ref=e1821]: </xs:schema>
+        - generic [ref=e1823]: </wsdl:types>
+      - generic [ref=e1824]:
+        - generic [ref=e1827]:
+          - text: <wsdl:message
+          - generic [ref=e1828]: name="buyPosition"
+          - text: ">"
+        - generic [ref=e1830]:
+          - generic [ref=e1831]:
+            - text: <wsdl:part
+            - generic [ref=e1832]: element="tns:buyPosition"
+            - generic [ref=e1833]: name="parameters"
+            - text: ">"
+          - generic [ref=e1834]: </wsdl:part>
+        - generic [ref=e1836]: </wsdl:message>
+      - generic [ref=e1837]:
+        - generic [ref=e1840]:
+          - text: <wsdl:message
+          - generic [ref=e1841]: name="getCustomer"
+          - text: ">"
+        - generic [ref=e1843]:
+          - generic [ref=e1844]:
+            - text: <wsdl:part
+            - generic [ref=e1845]: element="tns:getCustomer"
+            - generic [ref=e1846]: name="parameters"
+            - text: ">"
+          - generic [ref=e1847]: </wsdl:part>
+        - generic [ref=e1849]: </wsdl:message>
+      - generic [ref=e1850]:
+        - generic [ref=e1853]:
+          - text: <wsdl:message
+          - generic [ref=e1854]: name="initializeDB"
+          - text: ">"
+        - generic [ref=e1856]:
+          - generic [ref=e1857]:
+            - text: <wsdl:part
+            - generic [ref=e1858]: element="tns:initializeDB"
+            - generic [ref=e1859]: name="parameters"
+            - text: ">"
+          - generic [ref=e1860]: </wsdl:part>
+        - generic [ref=e1862]: </wsdl:message>
+      - generic [ref=e1863]:
+        - generic [ref=e1866]:
+          - text: <wsdl:message
+          - generic [ref=e1867]: name="initializeDBResponse"
+          - text: ">"
+        - generic [ref=e1869]:
+          - generic [ref=e1870]:
+            - text: <wsdl:part
+            - generic [ref=e1871]: element="tns:initializeDBResponse"
+            - generic [ref=e1872]: name="parameters"
+            - text: ">"
+          - generic [ref=e1873]: </wsdl:part>
+        - generic [ref=e1875]: </wsdl:message>
+      - generic [ref=e1876]:
+        - generic [ref=e1879]:
+          - text: <wsdl:message
+          - generic [ref=e1880]: name="sellPositionResponse"
+          - text: ">"
+        - generic [ref=e1882]:
+          - generic [ref=e1883]:
+            - text: <wsdl:part
+            - generic [ref=e1884]: element="tns:sellPositionResponse"
+            - generic [ref=e1885]: name="parameters"
+            - text: ">"
+          - generic [ref=e1886]: </wsdl:part>
+        - generic [ref=e1888]: </wsdl:message>
+      - generic [ref=e1889]:
+        - generic [ref=e1892]:
+          - text: <wsdl:message
+          - generic [ref=e1893]: name="createAccount"
+          - text: ">"
+        - generic [ref=e1895]:
+          - generic [ref=e1896]:
+            - text: <wsdl:part
+            - generic [ref=e1897]: element="tns:createAccount"
+            - generic [ref=e1898]: name="parameters"
+            - text: ">"
+          - generic [ref=e1899]: </wsdl:part>
+        - generic [ref=e1901]: </wsdl:message>
+      - generic [ref=e1902]:
+        - generic [ref=e1905]:
+          - text: <wsdl:message
+          - generic [ref=e1906]: name="getAccounts"
+          - text: ">"
+        - generic [ref=e1908]:
+          - generic [ref=e1909]:
+            - text: <wsdl:part
+            - generic [ref=e1910]: element="tns:getAccounts"
+            - generic [ref=e1911]: name="parameters"
+            - text: ">"
+          - generic [ref=e1912]: </wsdl:part>
+        - generic [ref=e1914]: </wsdl:message>
+      - generic [ref=e1915]:
+        - generic [ref=e1918]:
+          - text: <wsdl:message
+          - generic [ref=e1919]: name="getAccountsResponse"
+          - text: ">"
+        - generic [ref=e1921]:
+          - generic [ref=e1922]:
+            - text: <wsdl:part
+            - generic [ref=e1923]: element="tns:getAccountsResponse"
+            - generic [ref=e1924]: name="parameters"
+            - text: ">"
+          - generic [ref=e1925]: </wsdl:part>
+        - generic [ref=e1927]: </wsdl:message>
+      - generic [ref=e1928]:
+        - generic [ref=e1931]:
+          - text: <wsdl:message
+          - generic [ref=e1932]: name="getTransactions"
+          - text: ">"
+        - generic [ref=e1934]:
+          - generic [ref=e1935]:
+            - text: <wsdl:part
+            - generic [ref=e1936]: element="tns:getTransactions"
+            - generic [ref=e1937]: name="parameters"
+            - text: ">"
+          - generic [ref=e1938]: </wsdl:part>
+        - generic [ref=e1940]: </wsdl:message>
+      - generic [ref=e1941]:
+        - generic [ref=e1944]:
+          - text: <wsdl:message
+          - generic [ref=e1945]: name="loginResponse"
+          - text: ">"
+        - generic [ref=e1947]:
+          - generic [ref=e1948]:
+            - text: <wsdl:part
+            - generic [ref=e1949]: element="tns:loginResponse"
+            - generic [ref=e1950]: name="parameters"
+            - text: ">"
+          - generic [ref=e1951]: </wsdl:part>
+        - generic [ref=e1953]: </wsdl:message>
+      - generic [ref=e1954]:
+        - generic [ref=e1957]:
+          - text: <wsdl:message
+          - generic [ref=e1958]: name="getPositionHistoryResponse"
+          - text: ">"
+        - generic [ref=e1960]:
+          - generic [ref=e1961]:
+            - text: <wsdl:part
+            - generic [ref=e1962]: element="tns:getPositionHistoryResponse"
+            - generic [ref=e1963]: name="parameters"
+            - text: ">"
+          - generic [ref=e1964]: </wsdl:part>
+        - generic [ref=e1966]: </wsdl:message>
+      - generic [ref=e1967]:
+        - generic [ref=e1970]:
+          - text: <wsdl:message
+          - generic [ref=e1971]: name="updateCustomer"
+          - text: ">"
+        - generic [ref=e1973]:
+          - generic [ref=e1974]:
+            - text: <wsdl:part
+            - generic [ref=e1975]: element="tns:updateCustomer"
+            - generic [ref=e1976]: name="parameters"
+            - text: ">"
+          - generic [ref=e1977]: </wsdl:part>
+        - generic [ref=e1979]: </wsdl:message>
+      - generic [ref=e1980]:
+        - generic [ref=e1983]:
+          - text: <wsdl:message
+          - generic [ref=e1984]: name="deposit"
+          - text: ">"
+        - generic [ref=e1986]:
+          - generic [ref=e1987]:
+            - text: <wsdl:part
+            - generic [ref=e1988]: element="tns:deposit"
+            - generic [ref=e1989]: name="parameters"
+            - text: ">"
+          - generic [ref=e1990]: </wsdl:part>
+        - generic [ref=e1992]: </wsdl:message>
+      - generic [ref=e1993]:
+        - generic [ref=e1996]:
+          - text: <wsdl:message
+          - generic [ref=e1997]: name="getTransactionsOnDateResponse"
+          - text: ">"
+        - generic [ref=e1999]:
+          - generic [ref=e2000]:
+            - text: <wsdl:part
+            - generic [ref=e2001]: element="tns:getTransactionsOnDateResponse"
+            - generic [ref=e2002]: name="parameters"
+            - text: ">"
+          - generic [ref=e2003]: </wsdl:part>
+        - generic [ref=e2005]: </wsdl:message>
+      - generic [ref=e2006]:
+        - generic [ref=e2009]:
+          - text: <wsdl:message
+          - generic [ref=e2010]: name="transfer"
+          - text: ">"
+        - generic [ref=e2012]:
+          - generic [ref=e2013]:
+            - text: <wsdl:part
+            - generic [ref=e2014]: element="tns:transfer"
+            - generic [ref=e2015]: name="parameters"
+            - text: ">"
+          - generic [ref=e2016]: </wsdl:part>
+        - generic [ref=e2018]: </wsdl:message>
+      - generic [ref=e2019]:
+        - generic [ref=e2022]:
+          - text: <wsdl:message
+          - generic [ref=e2023]: name="getTransactionsByToFromDateResponse"
+          - text: ">"
+        - generic [ref=e2025]:
+          - generic [ref=e2026]:
+            - text: <wsdl:part
+            - generic [ref=e2027]: element="tns:getTransactionsByToFromDateResponse"
+            - generic [ref=e2028]: name="parameters"
+            - text: ">"
+          - generic [ref=e2029]: </wsdl:part>
+        - generic [ref=e2031]: </wsdl:message>
+      - generic [ref=e2032]:
+        - generic [ref=e2035]:
+          - text: <wsdl:message
+          - generic [ref=e2036]: name="getPositionsResponse"
+          - text: ">"
+        - generic [ref=e2038]:
+          - generic [ref=e2039]:
+            - text: <wsdl:part
+            - generic [ref=e2040]: element="tns:getPositionsResponse"
+            - generic [ref=e2041]: name="parameters"
+            - text: ">"
+          - generic [ref=e2042]: </wsdl:part>
+        - generic [ref=e2044]: </wsdl:message>
+      - generic [ref=e2045]:
+        - generic [ref=e2048]:
+          - text: <wsdl:message
+          - generic [ref=e2049]: name="depositResponse"
+          - text: ">"
+        - generic [ref=e2051]:
+          - generic [ref=e2052]:
+            - text: <wsdl:part
+            - generic [ref=e2053]: element="tns:depositResponse"
+            - generic [ref=e2054]: name="parameters"
+            - text: ">"
+          - generic [ref=e2055]: </wsdl:part>
+        - generic [ref=e2057]: </wsdl:message>
+      - generic [ref=e2058]:
+        - generic [ref=e2061]:
+          - text: <wsdl:message
+          - generic [ref=e2062]: name="cleanDBResponse"
+          - text: ">"
+        - generic [ref=e2064]:
+          - generic [ref=e2065]:
+            - text: <wsdl:part
+            - generic [ref=e2066]: element="tns:cleanDBResponse"
+            - generic [ref=e2067]: name="parameters"
+            - text: ">"
+          - generic [ref=e2068]: </wsdl:part>
+        - generic [ref=e2070]: </wsdl:message>
+      - generic [ref=e2071]:
+        - generic [ref=e2074]:
+          - text: <wsdl:message
+          - generic [ref=e2075]: name="getTransactionsByMonthAndType"
+          - text: ">"
+        - generic [ref=e2077]:
+          - generic [ref=e2078]:
+            - text: <wsdl:part
+            - generic [ref=e2079]: element="tns:getTransactionsByMonthAndType"
+            - generic [ref=e2080]: name="parameters"
+            - text: ">"
+          - generic [ref=e2081]: </wsdl:part>
+        - generic [ref=e2083]: </wsdl:message>
+      - generic [ref=e2084]:
+        - generic [ref=e2087]:
+          - text: <wsdl:message
+          - generic [ref=e2088]: name="withdrawResponse"
+          - text: ">"
+        - generic [ref=e2090]:
+          - generic [ref=e2091]:
+            - text: <wsdl:part
+            - generic [ref=e2092]: element="tns:withdrawResponse"
+            - generic [ref=e2093]: name="parameters"
+            - text: ">"
+          - generic [ref=e2094]: </wsdl:part>
+        - generic [ref=e2096]: </wsdl:message>
+      - generic [ref=e2097]:
+        - generic [ref=e2100]:
+          - text: <wsdl:message
+          - generic [ref=e2101]: name="getPositionHistory"
+          - text: ">"
+        - generic [ref=e2103]:
+          - generic [ref=e2104]:
+            - text: <wsdl:part
+            - generic [ref=e2105]: element="tns:getPositionHistory"
+            - generic [ref=e2106]: name="parameters"
+            - text: ">"
+          - generic [ref=e2107]: </wsdl:part>
+        - generic [ref=e2109]: </wsdl:message>
+      - generic [ref=e2110]:
+        - generic [ref=e2113]:
+          - text: <wsdl:message
+          - generic [ref=e2114]: name="getPositions"
+          - text: ">"
+        - generic [ref=e2116]:
+          - generic [ref=e2117]:
+            - text: <wsdl:part
+            - generic [ref=e2118]: element="tns:getPositions"
+            - generic [ref=e2119]: name="parameters"
+            - text: ">"
+          - generic [ref=e2120]: </wsdl:part>
+        - generic [ref=e2122]: </wsdl:message>
+      - generic [ref=e2123]:
+        - generic [ref=e2126]:
+          - text: <wsdl:message
+          - generic [ref=e2127]: name="getTransactionsByAmount"
+          - text: ">"
+        - generic [ref=e2129]:
+          - generic [ref=e2130]:
+            - text: <wsdl:part
+            - generic [ref=e2131]: element="tns:getTransactionsByAmount"
+            - generic [ref=e2132]: name="parameters"
+            - text: ">"
+          - generic [ref=e2133]: </wsdl:part>
+        - generic [ref=e2135]: </wsdl:message>
+      - generic [ref=e2136]:
+        - generic [ref=e2139]:
+          - text: <wsdl:message
+          - generic [ref=e2140]: name="cleanDB"
+          - text: ">"
+        - generic [ref=e2142]:
+          - generic [ref=e2143]:
+            - text: <wsdl:part
+            - generic [ref=e2144]: element="tns:cleanDB"
+            - generic [ref=e2145]: name="parameters"
+            - text: ">"
+          - generic [ref=e2146]: </wsdl:part>
+        - generic [ref=e2148]: </wsdl:message>
+      - generic [ref=e2149]:
+        - generic [ref=e2152]:
+          - text: <wsdl:message
+          - generic [ref=e2153]: name="requestLoan"
+          - text: ">"
+        - generic [ref=e2155]:
+          - generic [ref=e2156]:
+            - text: <wsdl:part
+            - generic [ref=e2157]: element="tns:requestLoan"
+            - generic [ref=e2158]: name="parameters"
+            - text: ">"
+          - generic [ref=e2159]: </wsdl:part>
+        - generic [ref=e2161]: </wsdl:message>
+      - generic [ref=e2162]:
+        - generic [ref=e2165]:
+          - text: <wsdl:message
+          - generic [ref=e2166]: name="startupJmsListener"
+          - text: ">"
+        - generic [ref=e2168]:
+          - generic [ref=e2169]:
+            - text: <wsdl:part
+            - generic [ref=e2170]: element="tns:startupJmsListener"
+            - generic [ref=e2171]: name="parameters"
+            - text: ">"
+          - generic [ref=e2172]: </wsdl:part>
+        - generic [ref=e2174]: </wsdl:message>
+      - generic [ref=e2175]:
+        - generic [ref=e2178]:
+          - text: <wsdl:message
+          - generic [ref=e2179]: name="setParameterResponse"
+          - text: ">"
+        - generic [ref=e2181]:
+          - generic [ref=e2182]:
+            - text: <wsdl:part
+            - generic [ref=e2183]: element="tns:setParameterResponse"
+            - generic [ref=e2184]: name="parameters"
+            - text: ">"
+          - generic [ref=e2185]: </wsdl:part>
+        - generic [ref=e2187]: </wsdl:message>
+      - generic [ref=e2188]:
+        - generic [ref=e2191]:
+          - text: <wsdl:message
+          - generic [ref=e2192]: name="billPayResponse"
+          - text: ">"
+        - generic [ref=e2194]:
+          - generic [ref=e2195]:
+            - text: <wsdl:part
+            - generic [ref=e2196]: element="tns:billPayResponse"
+            - generic [ref=e2197]: name="parameters"
+            - text: ">"
+          - generic [ref=e2198]: </wsdl:part>
+        - generic [ref=e2200]: </wsdl:message>
+      - generic [ref=e2201]:
+        - generic [ref=e2204]:
+          - text: <wsdl:message
+          - generic [ref=e2205]: name="createAccountResponse"
+          - text: ">"
+        - generic [ref=e2207]:
+          - generic [ref=e2208]:
+            - text: <wsdl:part
+            - generic [ref=e2209]: element="tns:createAccountResponse"
+            - generic [ref=e2210]: name="parameters"
+            - text: ">"
+          - generic [ref=e2211]: </wsdl:part>
+        - generic [ref=e2213]: </wsdl:message>
+      - generic [ref=e2214]:
+        - generic [ref=e2217]:
+          - text: <wsdl:message
+          - generic [ref=e2218]: name="getTransactionsOnDate"
+          - text: ">"
+        - generic [ref=e2220]:
+          - generic [ref=e2221]:
+            - text: <wsdl:part
+            - generic [ref=e2222]: element="tns:getTransactionsOnDate"
+            - generic [ref=e2223]: name="parameters"
+            - text: ">"
+          - generic [ref=e2224]: </wsdl:part>
+        - generic [ref=e2226]: </wsdl:message>
+      - generic [ref=e2227]:
+        - generic [ref=e2230]:
+          - text: <wsdl:message
+          - generic [ref=e2231]: name="getAccountResponse"
+          - text: ">"
+        - generic [ref=e2233]:
+          - generic [ref=e2234]:
+            - text: <wsdl:part
+            - generic [ref=e2235]: element="tns:getAccountResponse"
+            - generic [ref=e2236]: name="parameters"
+            - text: ">"
+          - generic [ref=e2237]: </wsdl:part>
+        - generic [ref=e2239]: </wsdl:message>
+      - generic [ref=e2240]:
+        - generic [ref=e2243]:
+          - text: <wsdl:message
+          - generic [ref=e2244]: name="withdraw"
+          - text: ">"
+        - generic [ref=e2246]:
+          - generic [ref=e2247]:
+            - text: <wsdl:part
+            - generic [ref=e2248]: element="tns:withdraw"
+            - generic [ref=e2249]: name="parameters"
+            - text: ">"
+          - generic [ref=e2250]: </wsdl:part>
+        - generic [ref=e2252]: </wsdl:message>
+      - generic [ref=e2253]:
+        - generic [ref=e2256]:
+          - text: <wsdl:message
+          - generic [ref=e2257]: name="updateCustomerResponse"
+          - text: ">"
+        - generic [ref=e2259]:
+          - generic [ref=e2260]:
+            - text: <wsdl:part
+            - generic [ref=e2261]: element="tns:updateCustomerResponse"
+            - generic [ref=e2262]: name="parameters"
+            - text: ">"
+          - generic [ref=e2263]: </wsdl:part>
+        - generic [ref=e2265]: </wsdl:message>
+      - generic [ref=e2266]:
+        - generic [ref=e2269]:
+          - text: <wsdl:message
+          - generic [ref=e2270]: name="getTransactionsByAmountResponse"
+          - text: ">"
+        - generic [ref=e2272]:
+          - generic [ref=e2273]:
+            - text: <wsdl:part
+            - generic [ref=e2274]: element="tns:getTransactionsByAmountResponse"
+            - generic [ref=e2275]: name="parameters"
+            - text: ">"
+          - generic [ref=e2276]: </wsdl:part>
+        - generic [ref=e2278]: </wsdl:message>
+      - generic [ref=e2279]:
+        - generic [ref=e2282]:
+          - text: <wsdl:message
+          - generic [ref=e2283]: name="getTransactionsByToFromDate"
+          - text: ">"
+        - generic [ref=e2285]:
+          - generic [ref=e2286]:
+            - text: <wsdl:part
+            - generic [ref=e2287]: element="tns:getTransactionsByToFromDate"
+            - generic [ref=e2288]: name="parameters"
+            - text: ">"
+          - generic [ref=e2289]: </wsdl:part>
+        - generic [ref=e2291]: </wsdl:message>
+      - generic [ref=e2292]:
+        - generic [ref=e2295]:
+          - text: <wsdl:message
+          - generic [ref=e2296]: name="getTransactionsByMonthAndTypeResponse"
+          - text: ">"
+        - generic [ref=e2298]:
+          - generic [ref=e2299]:
+            - text: <wsdl:part
+            - generic [ref=e2300]: element="tns:getTransactionsByMonthAndTypeResponse"
+            - generic [ref=e2301]: name="parameters"
+            - text: ">"
+          - generic [ref=e2302]: </wsdl:part>
+        - generic [ref=e2304]: </wsdl:message>
+      - generic [ref=e2305]:
+        - generic [ref=e2308]:
+          - text: <wsdl:message
+          - generic [ref=e2309]: name="shutdownJmsListener"
+          - text: ">"
+        - generic [ref=e2311]:
+          - generic [ref=e2312]:
+            - text: <wsdl:part
+            - generic [ref=e2313]: element="tns:shutdownJmsListener"
+            - generic [ref=e2314]: name="parameters"
+            - text: ">"
+          - generic [ref=e2315]: </wsdl:part>
+        - generic [ref=e2317]: </wsdl:message>
+      - generic [ref=e2318]:
+        - generic [ref=e2321]:
+          - text: <wsdl:message
+          - generic [ref=e2322]: name="getPosition"
+          - text: ">"
+        - generic [ref=e2324]:
+          - generic [ref=e2325]:
+            - text: <wsdl:part
+            - generic [ref=e2326]: element="tns:getPosition"
+            - generic [ref=e2327]: name="parameters"
+            - text: ">"
+          - generic [ref=e2328]: </wsdl:part>
+        - generic [ref=e2330]: </wsdl:message>
+      - generic [ref=e2331]:
+        - generic [ref=e2334]:
+          - text: <wsdl:message
+          - generic [ref=e2335]: name="login"
+          - text: ">"
+        - generic [ref=e2337]:
+          - generic [ref=e2338]:
+            - text: <wsdl:part
+            - generic [ref=e2339]: element="tns:login"
+            - generic [ref=e2340]: name="parameters"
+            - text: ">"
+          - generic [ref=e2341]: </wsdl:part>
+        - generic [ref=e2343]: </wsdl:message>
+      - generic [ref=e2344]:
+        - generic [ref=e2347]:
+          - text: <wsdl:message
+          - generic [ref=e2348]: name="getPositionResponse"
+          - text: ">"
+        - generic [ref=e2350]:
+          - generic [ref=e2351]:
+            - text: <wsdl:part
+            - generic [ref=e2352]: element="tns:getPositionResponse"
+            - generic [ref=e2353]: name="parameters"
+            - text: ">"
+          - generic [ref=e2354]: </wsdl:part>
+        - generic [ref=e2356]: </wsdl:message>
+      - generic [ref=e2357]:
+        - generic [ref=e2360]:
+          - text: <wsdl:message
+          - generic [ref=e2361]: name="getCustomerResponse"
+          - text: ">"
+        - generic [ref=e2363]:
+          - generic [ref=e2364]:
+            - text: <wsdl:part
+            - generic [ref=e2365]: element="tns:getCustomerResponse"
+            - generic [ref=e2366]: name="parameters"
+            - text: ">"
+          - generic [ref=e2367]: </wsdl:part>
+        - generic [ref=e2369]: </wsdl:message>
+      - generic [ref=e2370]:
+        - generic [ref=e2373]:
+          - text: <wsdl:message
+          - generic [ref=e2374]: name="getTransactionResponse"
+          - text: ">"
+        - generic [ref=e2376]:
+          - generic [ref=e2377]:
+            - text: <wsdl:part
+            - generic [ref=e2378]: element="tns:getTransactionResponse"
+            - generic [ref=e2379]: name="parameters"
+            - text: ">"
+          - generic [ref=e2380]: </wsdl:part>
+        - generic [ref=e2382]: </wsdl:message>
+      - generic [ref=e2383]:
+        - generic [ref=e2386]:
+          - text: <wsdl:message
+          - generic [ref=e2387]: name="startupJmsListenerResponse"
+          - text: ">"
+        - generic [ref=e2389]:
+          - generic [ref=e2390]:
+            - text: <wsdl:part
+            - generic [ref=e2391]: element="tns:startupJmsListenerResponse"
+            - generic [ref=e2392]: name="parameters"
+            - text: ">"
+          - generic [ref=e2393]: </wsdl:part>
+        - generic [ref=e2395]: </wsdl:message>
+      - generic [ref=e2396]:
+        - generic [ref=e2399]:
+          - text: <wsdl:message
+          - generic [ref=e2400]: name="getTransaction"
+          - text: ">"
+        - generic [ref=e2402]:
+          - generic [ref=e2403]:
+            - text: <wsdl:part
+            - generic [ref=e2404]: element="tns:getTransaction"
+            - generic [ref=e2405]: name="parameters"
+            - text: ">"
+          - generic [ref=e2406]: </wsdl:part>
+        - generic [ref=e2408]: </wsdl:message>
+      - generic [ref=e2409]:
+        - generic [ref=e2412]:
+          - text: <wsdl:message
+          - generic [ref=e2413]: name="setParameter"
+          - text: ">"
+        - generic [ref=e2415]:
+          - generic [ref=e2416]:
+            - text: <wsdl:part
+            - generic [ref=e2417]: element="tns:setParameter"
+            - generic [ref=e2418]: name="parameters"
+            - text: ">"
+          - generic [ref=e2419]: </wsdl:part>
+        - generic [ref=e2421]: </wsdl:message>
+      - generic [ref=e2422]:
+        - generic [ref=e2425]:
+          - text: <wsdl:message
+          - generic [ref=e2426]: name="requestLoanResponse"
+          - text: ">"
+        - generic [ref=e2428]:
+          - generic [ref=e2429]:
+            - text: <wsdl:part
+            - generic [ref=e2430]: element="tns:requestLoanResponse"
+            - generic [ref=e2431]: name="parameters"
+            - text: ">"
+          - generic [ref=e2432]: </wsdl:part>
+        - generic [ref=e2434]: </wsdl:message>
+      - generic [ref=e2435]:
+        - generic [ref=e2438]:
+          - text: <wsdl:message
+          - generic [ref=e2439]: name="ParaBankServiceException"
+          - text: ">"
+        - generic [ref=e2441]:
+          - generic [ref=e2442]:
+            - text: <wsdl:part
+            - generic [ref=e2443]: element="tns:ParaBankServiceException"
+            - generic [ref=e2444]: name="ParaBankServiceException"
+            - text: ">"
+          - generic [ref=e2445]: </wsdl:part>
+        - generic [ref=e2447]: </wsdl:message>
+      - generic [ref=e2448]:
+        - generic [ref=e2451]:
+          - text: <wsdl:message
+          - generic [ref=e2452]: name="transferResponse"
+          - text: ">"
+        - generic [ref=e2454]:
+          - generic [ref=e2455]:
+            - text: <wsdl:part
+            - generic [ref=e2456]: element="tns:transferResponse"
+            - generic [ref=e2457]: name="parameters"
+            - text: ">"
+          - generic [ref=e2458]: </wsdl:part>
+        - generic [ref=e2460]: </wsdl:message>
+      - generic [ref=e2461]:
+        - generic [ref=e2464]:
+          - text: <wsdl:message
+          - generic [ref=e2465]: name="getTransactionsResponse"
+          - text: ">"
+        - generic [ref=e2467]:
+          - generic [ref=e2468]:
+            - text: <wsdl:part
+            - generic [ref=e2469]: element="tns:getTransactionsResponse"
+            - generic [ref=e2470]: name="parameters"
+            - text: ">"
+          - generic [ref=e2471]: </wsdl:part>
+        - generic [ref=e2473]: </wsdl:message>
+      - generic [ref=e2474]:
+        - generic [ref=e2477]:
+          - text: <wsdl:message
+          - generic [ref=e2478]: name="shutdownJmsListenerResponse"
+          - text: ">"
+        - generic [ref=e2480]:
+          - generic [ref=e2481]:
+            - text: <wsdl:part
+            - generic [ref=e2482]: element="tns:shutdownJmsListenerResponse"
+            - generic [ref=e2483]: name="parameters"
+            - text: ">"
+          - generic [ref=e2484]: </wsdl:part>
+        - generic [ref=e2486]: </wsdl:message>
+      - generic [ref=e2487]:
+        - generic [ref=e2490]:
+          - text: <wsdl:message
+          - generic [ref=e2491]: name="buyPositionResponse"
+          - text: ">"
+        - generic [ref=e2493]:
+          - generic [ref=e2494]:
+            - text: <wsdl:part
+            - generic [ref=e2495]: element="tns:buyPositionResponse"
+            - generic [ref=e2496]: name="parameters"
+            - text: ">"
+          - generic [ref=e2497]: </wsdl:part>
+        - generic [ref=e2499]: </wsdl:message>
+      - generic [ref=e2500]:
+        - generic [ref=e2503]:
+          - text: <wsdl:message
+          - generic [ref=e2504]: name="sellPosition"
+          - text: ">"
+        - generic [ref=e2506]:
+          - generic [ref=e2507]:
+            - text: <wsdl:part
+            - generic [ref=e2508]: element="tns:sellPosition"
+            - generic [ref=e2509]: name="parameters"
+            - text: ">"
+          - generic [ref=e2510]: </wsdl:part>
+        - generic [ref=e2512]: </wsdl:message>
+      - generic [ref=e2513]:
+        - generic [ref=e2516]:
+          - text: <wsdl:message
+          - generic [ref=e2517]: name="getAccount"
+          - text: ">"
+        - generic [ref=e2519]:
+          - generic [ref=e2520]:
+            - text: <wsdl:part
+            - generic [ref=e2521]: element="tns:getAccount"
+            - generic [ref=e2522]: name="parameters"
+            - text: ">"
+          - generic [ref=e2523]: </wsdl:part>
+        - generic [ref=e2525]: </wsdl:message>
+      - generic [ref=e2526]:
+        - generic [ref=e2529]:
+          - text: <wsdl:message
+          - generic [ref=e2530]: name="billPay"
+          - text: ">"
+        - generic [ref=e2532]:
+          - generic [ref=e2533]:
+            - text: <wsdl:part
+            - generic [ref=e2534]: element="tns:billPay"
+            - generic [ref=e2535]: name="parameters"
+            - text: ">"
+          - generic [ref=e2536]: </wsdl:part>
+        - generic [ref=e2538]: </wsdl:message>
+      - generic [ref=e2539]:
+        - generic [ref=e2542]:
+          - text: <wsdl:portType
+          - generic [ref=e2543]: name="ParaBankService"
+          - text: ">"
+        - generic [ref=e2544]:
+          - generic [ref=e2545]:
+            - generic [ref=e2548]:
+              - text: <wsdl:operation
+              - generic [ref=e2549]: name="startupJmsListener"
+              - text: ">"
+            - generic [ref=e2550]:
+              - generic [ref=e2551]:
+                - generic [ref=e2552]:
+                  - text: <wsdl:input
+                  - generic [ref=e2553]: message="tns:startupJmsListener"
+                  - generic [ref=e2554]: name="startupJmsListener"
+                  - text: ">"
+                - generic [ref=e2555]: </wsdl:input>
+              - generic [ref=e2556]:
+                - generic [ref=e2557]:
+                  - text: <wsdl:output
+                  - generic [ref=e2558]: message="tns:startupJmsListenerResponse"
+                  - generic [ref=e2559]: name="startupJmsListenerResponse"
+                  - text: ">"
+                - generic [ref=e2560]: </wsdl:output>
+            - generic [ref=e2562]: </wsdl:operation>
+          - generic [ref=e2563]:
+            - generic [ref=e2566]:
+              - text: <wsdl:operation
+              - generic [ref=e2567]: name="buyPosition"
+              - text: ">"
+            - generic [ref=e2568]:
+              - generic [ref=e2569]:
+                - generic [ref=e2570]:
+                  - text: <wsdl:input
+                  - generic [ref=e2571]: message="tns:buyPosition"
+                  - generic [ref=e2572]: name="buyPosition"
+                  - text: ">"
+                - generic [ref=e2573]: </wsdl:input>
+              - generic [ref=e2574]:
+                - generic [ref=e2575]:
+                  - text: <wsdl:output
+                  - generic [ref=e2576]: message="tns:buyPositionResponse"
+                  - generic [ref=e2577]: name="buyPositionResponse"
+                  - text: ">"
+                - generic [ref=e2578]: </wsdl:output>
+              - generic [ref=e2579]:
+                - generic [ref=e2580]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2581]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2582]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2583]: </wsdl:fault>
+            - generic [ref=e2585]: </wsdl:operation>
+          - generic [ref=e2586]:
+            - generic [ref=e2589]:
+              - text: <wsdl:operation
+              - generic [ref=e2590]: name="getCustomer"
+              - text: ">"
+            - generic [ref=e2591]:
+              - generic [ref=e2592]:
+                - generic [ref=e2593]:
+                  - text: <wsdl:input
+                  - generic [ref=e2594]: message="tns:getCustomer"
+                  - generic [ref=e2595]: name="getCustomer"
+                  - text: ">"
+                - generic [ref=e2596]: </wsdl:input>
+              - generic [ref=e2597]:
+                - generic [ref=e2598]:
+                  - text: <wsdl:output
+                  - generic [ref=e2599]: message="tns:getCustomerResponse"
+                  - generic [ref=e2600]: name="getCustomerResponse"
+                  - text: ">"
+                - generic [ref=e2601]: </wsdl:output>
+              - generic [ref=e2602]:
+                - generic [ref=e2603]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2604]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2605]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2606]: </wsdl:fault>
+            - generic [ref=e2608]: </wsdl:operation>
+          - generic [ref=e2609]:
+            - generic [ref=e2612]:
+              - text: <wsdl:operation
+              - generic [ref=e2613]: name="initializeDB"
+              - text: ">"
+            - generic [ref=e2614]:
+              - generic [ref=e2615]:
+                - generic [ref=e2616]:
+                  - text: <wsdl:input
+                  - generic [ref=e2617]: message="tns:initializeDB"
+                  - generic [ref=e2618]: name="initializeDB"
+                  - text: ">"
+                - generic [ref=e2619]: </wsdl:input>
+              - generic [ref=e2620]:
+                - generic [ref=e2621]:
+                  - text: <wsdl:output
+                  - generic [ref=e2622]: message="tns:initializeDBResponse"
+                  - generic [ref=e2623]: name="initializeDBResponse"
+                  - text: ">"
+                - generic [ref=e2624]: </wsdl:output>
+            - generic [ref=e2626]: </wsdl:operation>
+          - generic [ref=e2627]:
+            - generic [ref=e2630]:
+              - text: <wsdl:operation
+              - generic [ref=e2631]: name="createAccount"
+              - text: ">"
+            - generic [ref=e2632]:
+              - generic [ref=e2633]:
+                - generic [ref=e2634]:
+                  - text: <wsdl:input
+                  - generic [ref=e2635]: message="tns:createAccount"
+                  - generic [ref=e2636]: name="createAccount"
+                  - text: ">"
+                - generic [ref=e2637]: </wsdl:input>
+              - generic [ref=e2638]:
+                - generic [ref=e2639]:
+                  - text: <wsdl:output
+                  - generic [ref=e2640]: message="tns:createAccountResponse"
+                  - generic [ref=e2641]: name="createAccountResponse"
+                  - text: ">"
+                - generic [ref=e2642]: </wsdl:output>
+              - generic [ref=e2643]:
+                - generic [ref=e2644]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2645]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2646]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2647]: </wsdl:fault>
+            - generic [ref=e2649]: </wsdl:operation>
+          - generic [ref=e2650]:
+            - generic [ref=e2653]:
+              - text: <wsdl:operation
+              - generic [ref=e2654]: name="getAccounts"
+              - text: ">"
+            - generic [ref=e2655]:
+              - generic [ref=e2656]:
+                - generic [ref=e2657]:
+                  - text: <wsdl:input
+                  - generic [ref=e2658]: message="tns:getAccounts"
+                  - generic [ref=e2659]: name="getAccounts"
+                  - text: ">"
+                - generic [ref=e2660]: </wsdl:input>
+              - generic [ref=e2661]:
+                - generic [ref=e2662]:
+                  - text: <wsdl:output
+                  - generic [ref=e2663]: message="tns:getAccountsResponse"
+                  - generic [ref=e2664]: name="getAccountsResponse"
+                  - text: ">"
+                - generic [ref=e2665]: </wsdl:output>
+              - generic [ref=e2666]:
+                - generic [ref=e2667]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2668]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2669]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2670]: </wsdl:fault>
+            - generic [ref=e2672]: </wsdl:operation>
+          - generic [ref=e2673]:
+            - generic [ref=e2676]:
+              - text: <wsdl:operation
+              - generic [ref=e2677]: name="getTransactions"
+              - text: ">"
+            - generic [ref=e2678]:
+              - generic [ref=e2679]:
+                - generic [ref=e2680]:
+                  - text: <wsdl:input
+                  - generic [ref=e2681]: message="tns:getTransactions"
+                  - generic [ref=e2682]: name="getTransactions"
+                  - text: ">"
+                - generic [ref=e2683]: </wsdl:input>
+              - generic [ref=e2684]:
+                - generic [ref=e2685]:
+                  - text: <wsdl:output
+                  - generic [ref=e2686]: message="tns:getTransactionsResponse"
+                  - generic [ref=e2687]: name="getTransactionsResponse"
+                  - text: ">"
+                - generic [ref=e2688]: </wsdl:output>
+              - generic [ref=e2689]:
+                - generic [ref=e2690]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2691]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2692]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2693]: </wsdl:fault>
+            - generic [ref=e2695]: </wsdl:operation>
+          - generic [ref=e2696]:
+            - generic [ref=e2699]:
+              - text: <wsdl:operation
+              - generic [ref=e2700]: name="getTransactionsOnDate"
+              - text: ">"
+            - generic [ref=e2701]:
+              - generic [ref=e2702]:
+                - generic [ref=e2703]:
+                  - text: <wsdl:input
+                  - generic [ref=e2704]: message="tns:getTransactionsOnDate"
+                  - generic [ref=e2705]: name="getTransactionsOnDate"
+                  - text: ">"
+                - generic [ref=e2706]: </wsdl:input>
+              - generic [ref=e2707]:
+                - generic [ref=e2708]:
+                  - text: <wsdl:output
+                  - generic [ref=e2709]: message="tns:getTransactionsOnDateResponse"
+                  - generic [ref=e2710]: name="getTransactionsOnDateResponse"
+                  - text: ">"
+                - generic [ref=e2711]: </wsdl:output>
+              - generic [ref=e2712]:
+                - generic [ref=e2713]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2714]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2715]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2716]: </wsdl:fault>
+            - generic [ref=e2718]: </wsdl:operation>
+          - generic [ref=e2719]:
+            - generic [ref=e2722]:
+              - text: <wsdl:operation
+              - generic [ref=e2723]: name="withdraw"
+              - text: ">"
+            - generic [ref=e2724]:
+              - generic [ref=e2725]:
+                - generic [ref=e2726]:
+                  - text: <wsdl:input
+                  - generic [ref=e2727]: message="tns:withdraw"
+                  - generic [ref=e2728]: name="withdraw"
+                  - text: ">"
+                - generic [ref=e2729]: </wsdl:input>
+              - generic [ref=e2730]:
+                - generic [ref=e2731]:
+                  - text: <wsdl:output
+                  - generic [ref=e2732]: message="tns:withdrawResponse"
+                  - generic [ref=e2733]: name="withdrawResponse"
+                  - text: ">"
+                - generic [ref=e2734]: </wsdl:output>
+              - generic [ref=e2735]:
+                - generic [ref=e2736]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2737]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2738]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2739]: </wsdl:fault>
+            - generic [ref=e2741]: </wsdl:operation>
+          - generic [ref=e2742]:
+            - generic [ref=e2745]:
+              - text: <wsdl:operation
+              - generic [ref=e2746]: name="updateCustomer"
+              - text: ">"
+            - generic [ref=e2747]:
+              - generic [ref=e2748]:
+                - generic [ref=e2749]:
+                  - text: <wsdl:input
+                  - generic [ref=e2750]: message="tns:updateCustomer"
+                  - generic [ref=e2751]: name="updateCustomer"
+                  - text: ">"
+                - generic [ref=e2752]: </wsdl:input>
+              - generic [ref=e2753]:
+                - generic [ref=e2754]:
+                  - text: <wsdl:output
+                  - generic [ref=e2755]: message="tns:updateCustomerResponse"
+                  - generic [ref=e2756]: name="updateCustomerResponse"
+                  - text: ">"
+                - generic [ref=e2757]: </wsdl:output>
+              - generic [ref=e2758]:
+                - generic [ref=e2759]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2760]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2761]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2762]: </wsdl:fault>
+            - generic [ref=e2764]: </wsdl:operation>
+          - generic [ref=e2765]:
+            - generic [ref=e2768]:
+              - text: <wsdl:operation
+              - generic [ref=e2769]: name="deposit"
+              - text: ">"
+            - generic [ref=e2770]:
+              - generic [ref=e2771]:
+                - generic [ref=e2772]:
+                  - text: <wsdl:input
+                  - generic [ref=e2773]: message="tns:deposit"
+                  - generic [ref=e2774]: name="deposit"
+                  - text: ">"
+                - generic [ref=e2775]: </wsdl:input>
+              - generic [ref=e2776]:
+                - generic [ref=e2777]:
+                  - text: <wsdl:output
+                  - generic [ref=e2778]: message="tns:depositResponse"
+                  - generic [ref=e2779]: name="depositResponse"
+                  - text: ">"
+                - generic [ref=e2780]: </wsdl:output>
+              - generic [ref=e2781]:
+                - generic [ref=e2782]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2783]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2784]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2785]: </wsdl:fault>
+            - generic [ref=e2787]: </wsdl:operation>
+          - generic [ref=e2788]:
+            - generic [ref=e2791]:
+              - text: <wsdl:operation
+              - generic [ref=e2792]: name="getTransactionsByToFromDate"
+              - text: ">"
+            - generic [ref=e2793]:
+              - generic [ref=e2794]:
+                - generic [ref=e2795]:
+                  - text: <wsdl:input
+                  - generic [ref=e2796]: message="tns:getTransactionsByToFromDate"
+                  - generic [ref=e2797]: name="getTransactionsByToFromDate"
+                  - text: ">"
+                - generic [ref=e2798]: </wsdl:input>
+              - generic [ref=e2799]:
+                - generic [ref=e2800]:
+                  - text: <wsdl:output
+                  - generic [ref=e2801]: message="tns:getTransactionsByToFromDateResponse"
+                  - generic [ref=e2802]: name="getTransactionsByToFromDateResponse"
+                  - text: ">"
+                - generic [ref=e2803]: </wsdl:output>
+              - generic [ref=e2804]:
+                - generic [ref=e2805]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2806]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2807]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2808]: </wsdl:fault>
+            - generic [ref=e2810]: </wsdl:operation>
+          - generic [ref=e2811]:
+            - generic [ref=e2814]:
+              - text: <wsdl:operation
+              - generic [ref=e2815]: name="shutdownJmsListener"
+              - text: ">"
+            - generic [ref=e2816]:
+              - generic [ref=e2817]:
+                - generic [ref=e2818]:
+                  - text: <wsdl:input
+                  - generic [ref=e2819]: message="tns:shutdownJmsListener"
+                  - generic [ref=e2820]: name="shutdownJmsListener"
+                  - text: ">"
+                - generic [ref=e2821]: </wsdl:input>
+              - generic [ref=e2822]:
+                - generic [ref=e2823]:
+                  - text: <wsdl:output
+                  - generic [ref=e2824]: message="tns:shutdownJmsListenerResponse"
+                  - generic [ref=e2825]: name="shutdownJmsListenerResponse"
+                  - text: ">"
+                - generic [ref=e2826]: </wsdl:output>
+            - generic [ref=e2828]: </wsdl:operation>
+          - generic [ref=e2829]:
+            - generic [ref=e2832]:
+              - text: <wsdl:operation
+              - generic [ref=e2833]: name="getPosition"
+              - text: ">"
+            - generic [ref=e2834]:
+              - generic [ref=e2835]:
+                - generic [ref=e2836]:
+                  - text: <wsdl:input
+                  - generic [ref=e2837]: message="tns:getPosition"
+                  - generic [ref=e2838]: name="getPosition"
+                  - text: ">"
+                - generic [ref=e2839]: </wsdl:input>
+              - generic [ref=e2840]:
+                - generic [ref=e2841]:
+                  - text: <wsdl:output
+                  - generic [ref=e2842]: message="tns:getPositionResponse"
+                  - generic [ref=e2843]: name="getPositionResponse"
+                  - text: ">"
+                - generic [ref=e2844]: </wsdl:output>
+              - generic [ref=e2845]:
+                - generic [ref=e2846]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2847]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2848]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2849]: </wsdl:fault>
+            - generic [ref=e2851]: </wsdl:operation>
+          - generic [ref=e2852]:
+            - generic [ref=e2855]:
+              - text: <wsdl:operation
+              - generic [ref=e2856]: name="transfer"
+              - text: ">"
+            - generic [ref=e2857]:
+              - generic [ref=e2858]:
+                - generic [ref=e2859]:
+                  - text: <wsdl:input
+                  - generic [ref=e2860]: message="tns:transfer"
+                  - generic [ref=e2861]: name="transfer"
+                  - text: ">"
+                - generic [ref=e2862]: </wsdl:input>
+              - generic [ref=e2863]:
+                - generic [ref=e2864]:
+                  - text: <wsdl:output
+                  - generic [ref=e2865]: message="tns:transferResponse"
+                  - generic [ref=e2866]: name="transferResponse"
+                  - text: ">"
+                - generic [ref=e2867]: </wsdl:output>
+              - generic [ref=e2868]:
+                - generic [ref=e2869]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2870]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2871]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2872]: </wsdl:fault>
+            - generic [ref=e2874]: </wsdl:operation>
+          - generic [ref=e2875]:
+            - generic [ref=e2878]:
+              - text: <wsdl:operation
+              - generic [ref=e2879]: name="login"
+              - text: ">"
+            - generic [ref=e2880]:
+              - generic [ref=e2881]:
+                - generic [ref=e2882]:
+                  - text: <wsdl:input
+                  - generic [ref=e2883]: message="tns:login"
+                  - generic [ref=e2884]: name="login"
+                  - text: ">"
+                - generic [ref=e2885]: </wsdl:input>
+              - generic [ref=e2886]:
+                - generic [ref=e2887]:
+                  - text: <wsdl:output
+                  - generic [ref=e2888]: message="tns:loginResponse"
+                  - generic [ref=e2889]: name="loginResponse"
+                  - text: ">"
+                - generic [ref=e2890]: </wsdl:output>
+              - generic [ref=e2891]:
+                - generic [ref=e2892]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2893]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2894]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2895]: </wsdl:fault>
+            - generic [ref=e2897]: </wsdl:operation>
+          - generic [ref=e2898]:
+            - generic [ref=e2901]:
+              - text: <wsdl:operation
+              - generic [ref=e2902]: name="getTransactionsByMonthAndType"
+              - text: ">"
+            - generic [ref=e2903]:
+              - generic [ref=e2904]:
+                - generic [ref=e2905]:
+                  - text: <wsdl:input
+                  - generic [ref=e2906]: message="tns:getTransactionsByMonthAndType"
+                  - generic [ref=e2907]: name="getTransactionsByMonthAndType"
+                  - text: ">"
+                - generic [ref=e2908]: </wsdl:input>
+              - generic [ref=e2909]:
+                - generic [ref=e2910]:
+                  - text: <wsdl:output
+                  - generic [ref=e2911]: message="tns:getTransactionsByMonthAndTypeResponse"
+                  - generic [ref=e2912]: name="getTransactionsByMonthAndTypeResponse"
+                  - text: ">"
+                - generic [ref=e2913]: </wsdl:output>
+              - generic [ref=e2914]:
+                - generic [ref=e2915]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2916]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2917]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2918]: </wsdl:fault>
+            - generic [ref=e2920]: </wsdl:operation>
+          - generic [ref=e2921]:
+            - generic [ref=e2924]:
+              - text: <wsdl:operation
+              - generic [ref=e2925]: name="getPositionHistory"
+              - text: ">"
+            - generic [ref=e2926]:
+              - generic [ref=e2927]:
+                - generic [ref=e2928]:
+                  - text: <wsdl:input
+                  - generic [ref=e2929]: message="tns:getPositionHistory"
+                  - generic [ref=e2930]: name="getPositionHistory"
+                  - text: ">"
+                - generic [ref=e2931]: </wsdl:input>
+              - generic [ref=e2932]:
+                - generic [ref=e2933]:
+                  - text: <wsdl:output
+                  - generic [ref=e2934]: message="tns:getPositionHistoryResponse"
+                  - generic [ref=e2935]: name="getPositionHistoryResponse"
+                  - text: ">"
+                - generic [ref=e2936]: </wsdl:output>
+              - generic [ref=e2937]:
+                - generic [ref=e2938]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2939]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2940]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2941]: </wsdl:fault>
+            - generic [ref=e2943]: </wsdl:operation>
+          - generic [ref=e2944]:
+            - generic [ref=e2947]:
+              - text: <wsdl:operation
+              - generic [ref=e2948]: name="getTransaction"
+              - text: ">"
+            - generic [ref=e2949]:
+              - generic [ref=e2950]:
+                - generic [ref=e2951]:
+                  - text: <wsdl:input
+                  - generic [ref=e2952]: message="tns:getTransaction"
+                  - generic [ref=e2953]: name="getTransaction"
+                  - text: ">"
+                - generic [ref=e2954]: </wsdl:input>
+              - generic [ref=e2955]:
+                - generic [ref=e2956]:
+                  - text: <wsdl:output
+                  - generic [ref=e2957]: message="tns:getTransactionResponse"
+                  - generic [ref=e2958]: name="getTransactionResponse"
+                  - text: ">"
+                - generic [ref=e2959]: </wsdl:output>
+              - generic [ref=e2960]:
+                - generic [ref=e2961]:
+                  - text: <wsdl:fault
+                  - generic [ref=e2962]: message="tns:ParaBankServiceException"
+                  - generic [ref=e2963]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e2964]: </wsdl:fault>
+            - generic [ref=e2966]: </wsdl:operation>
+          - generic [ref=e2967]:
+            - generic [ref=e2970]:
+              - text: <wsdl:operation
+              - generic [ref=e2971]: name="setParameter"
+              - text: ">"
+            - generic [ref=e2972]:
+              - generic [ref=e2973]:
+                - generic [ref=e2974]:
+                  - text: <wsdl:input
+                  - generic [ref=e2975]: message="tns:setParameter"
+                  - generic [ref=e2976]: name="setParameter"
+                  - text: ">"
+                - generic [ref=e2977]: </wsdl:input>
+              - generic [ref=e2978]:
+                - generic [ref=e2979]:
+                  - text: <wsdl:output
+                  - generic [ref=e2980]: message="tns:setParameterResponse"
+                  - generic [ref=e2981]: name="setParameterResponse"
+                  - text: ">"
+                - generic [ref=e2982]: </wsdl:output>
+            - generic [ref=e2984]: </wsdl:operation>
+          - generic [ref=e2985]:
+            - generic [ref=e2988]:
+              - text: <wsdl:operation
+              - generic [ref=e2989]: name="getPositions"
+              - text: ">"
+            - generic [ref=e2990]:
+              - generic [ref=e2991]:
+                - generic [ref=e2992]:
+                  - text: <wsdl:input
+                  - generic [ref=e2993]: message="tns:getPositions"
+                  - generic [ref=e2994]: name="getPositions"
+                  - text: ">"
+                - generic [ref=e2995]: </wsdl:input>
+              - generic [ref=e2996]:
+                - generic [ref=e2997]:
+                  - text: <wsdl:output
+                  - generic [ref=e2998]: message="tns:getPositionsResponse"
+                  - generic [ref=e2999]: name="getPositionsResponse"
+                  - text: ">"
+                - generic [ref=e3000]: </wsdl:output>
+              - generic [ref=e3001]:
+                - generic [ref=e3002]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3003]: message="tns:ParaBankServiceException"
+                  - generic [ref=e3004]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3005]: </wsdl:fault>
+            - generic [ref=e3007]: </wsdl:operation>
+          - generic [ref=e3008]:
+            - generic [ref=e3011]:
+              - text: <wsdl:operation
+              - generic [ref=e3012]: name="getTransactionsByAmount"
+              - text: ">"
+            - generic [ref=e3013]:
+              - generic [ref=e3014]:
+                - generic [ref=e3015]:
+                  - text: <wsdl:input
+                  - generic [ref=e3016]: message="tns:getTransactionsByAmount"
+                  - generic [ref=e3017]: name="getTransactionsByAmount"
+                  - text: ">"
+                - generic [ref=e3018]: </wsdl:input>
+              - generic [ref=e3019]:
+                - generic [ref=e3020]:
+                  - text: <wsdl:output
+                  - generic [ref=e3021]: message="tns:getTransactionsByAmountResponse"
+                  - generic [ref=e3022]: name="getTransactionsByAmountResponse"
+                  - text: ">"
+                - generic [ref=e3023]: </wsdl:output>
+              - generic [ref=e3024]:
+                - generic [ref=e3025]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3026]: message="tns:ParaBankServiceException"
+                  - generic [ref=e3027]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3028]: </wsdl:fault>
+            - generic [ref=e3030]: </wsdl:operation>
+          - generic [ref=e3031]:
+            - generic [ref=e3034]:
+              - text: <wsdl:operation
+              - generic [ref=e3035]: name="sellPosition"
+              - text: ">"
+            - generic [ref=e3036]:
+              - generic [ref=e3037]:
+                - generic [ref=e3038]:
+                  - text: <wsdl:input
+                  - generic [ref=e3039]: message="tns:sellPosition"
+                  - generic [ref=e3040]: name="sellPosition"
+                  - text: ">"
+                - generic [ref=e3041]: </wsdl:input>
+              - generic [ref=e3042]:
+                - generic [ref=e3043]:
+                  - text: <wsdl:output
+                  - generic [ref=e3044]: message="tns:sellPositionResponse"
+                  - generic [ref=e3045]: name="sellPositionResponse"
+                  - text: ">"
+                - generic [ref=e3046]: </wsdl:output>
+              - generic [ref=e3047]:
+                - generic [ref=e3048]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3049]: message="tns:ParaBankServiceException"
+                  - generic [ref=e3050]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3051]: </wsdl:fault>
+            - generic [ref=e3053]: </wsdl:operation>
+          - generic [ref=e3054]:
+            - generic [ref=e3057]:
+              - text: <wsdl:operation
+              - generic [ref=e3058]: name="cleanDB"
+              - text: ">"
+            - generic [ref=e3059]:
+              - generic [ref=e3060]:
+                - generic [ref=e3061]:
+                  - text: <wsdl:input
+                  - generic [ref=e3062]: message="tns:cleanDB"
+                  - generic [ref=e3063]: name="cleanDB"
+                  - text: ">"
+                - generic [ref=e3064]: </wsdl:input>
+              - generic [ref=e3065]:
+                - generic [ref=e3066]:
+                  - text: <wsdl:output
+                  - generic [ref=e3067]: message="tns:cleanDBResponse"
+                  - generic [ref=e3068]: name="cleanDBResponse"
+                  - text: ">"
+                - generic [ref=e3069]: </wsdl:output>
+            - generic [ref=e3071]: </wsdl:operation>
+          - generic [ref=e3072]:
+            - generic [ref=e3075]:
+              - text: <wsdl:operation
+              - generic [ref=e3076]: name="requestLoan"
+              - text: ">"
+            - generic [ref=e3077]:
+              - generic [ref=e3078]:
+                - generic [ref=e3079]:
+                  - text: <wsdl:input
+                  - generic [ref=e3080]: message="tns:requestLoan"
+                  - generic [ref=e3081]: name="requestLoan"
+                  - text: ">"
+                - generic [ref=e3082]: </wsdl:input>
+              - generic [ref=e3083]:
+                - generic [ref=e3084]:
+                  - text: <wsdl:output
+                  - generic [ref=e3085]: message="tns:requestLoanResponse"
+                  - generic [ref=e3086]: name="requestLoanResponse"
+                  - text: ">"
+                - generic [ref=e3087]: </wsdl:output>
+              - generic [ref=e3088]:
+                - generic [ref=e3089]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3090]: message="tns:ParaBankServiceException"
+                  - generic [ref=e3091]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3092]: </wsdl:fault>
+            - generic [ref=e3094]: </wsdl:operation>
+          - generic [ref=e3095]:
+            - generic [ref=e3098]:
+              - text: <wsdl:operation
+              - generic [ref=e3099]: name="getAccount"
+              - text: ">"
+            - generic [ref=e3100]:
+              - generic [ref=e3101]:
+                - generic [ref=e3102]:
+                  - text: <wsdl:input
+                  - generic [ref=e3103]: message="tns:getAccount"
+                  - generic [ref=e3104]: name="getAccount"
+                  - text: ">"
+                - generic [ref=e3105]: </wsdl:input>
+              - generic [ref=e3106]:
+                - generic [ref=e3107]:
+                  - text: <wsdl:output
+                  - generic [ref=e3108]: message="tns:getAccountResponse"
+                  - generic [ref=e3109]: name="getAccountResponse"
+                  - text: ">"
+                - generic [ref=e3110]: </wsdl:output>
+              - generic [ref=e3111]:
+                - generic [ref=e3112]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3113]: message="tns:ParaBankServiceException"
+                  - generic [ref=e3114]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3115]: </wsdl:fault>
+            - generic [ref=e3117]: </wsdl:operation>
+          - generic [ref=e3118]:
+            - generic [ref=e3121]:
+              - text: <wsdl:operation
+              - generic [ref=e3122]: name="billPay"
+              - text: ">"
+            - generic [ref=e3123]:
+              - generic [ref=e3124]:
+                - generic [ref=e3125]:
+                  - text: <wsdl:input
+                  - generic [ref=e3126]: message="tns:billPay"
+                  - generic [ref=e3127]: name="billPay"
+                  - text: ">"
+                - generic [ref=e3128]: </wsdl:input>
+              - generic [ref=e3129]:
+                - generic [ref=e3130]:
+                  - text: <wsdl:output
+                  - generic [ref=e3131]: message="tns:billPayResponse"
+                  - generic [ref=e3132]: name="billPayResponse"
+                  - text: ">"
+                - generic [ref=e3133]: </wsdl:output>
+              - generic [ref=e3134]:
+                - generic [ref=e3135]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3136]: message="tns:ParaBankServiceException"
+                  - generic [ref=e3137]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3138]: </wsdl:fault>
+            - generic [ref=e3140]: </wsdl:operation>
+        - generic [ref=e3142]: </wsdl:portType>
+      - generic [ref=e3143]:
+        - generic [ref=e3146]:
+          - text: <wsdl:binding
+          - generic [ref=e3147]: name="ParaBankSoapBinding"
+          - generic [ref=e3148]: type="tns:ParaBankService"
+          - text: ">"
+        - generic [ref=e3149]:
+          - generic [ref=e3151]:
+            - text: <soap:binding
+            - generic [ref=e3152]: style="document"
+            - generic [ref=e3153]: transport="http://schemas.xmlsoap.org/soap/http"
+            - text: />
+          - generic [ref=e3154]:
+            - generic [ref=e3157]:
+              - text: <wsdl:operation
+              - generic [ref=e3158]: name="startupJmsListener"
+              - text: ">"
+            - generic [ref=e3159]:
+              - generic [ref=e3161]:
+                - text: <soap:operation
+                - generic [ref=e3162]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3163]: style="document"
+                - text: />
+              - generic [ref=e3164]:
+                - generic [ref=e3167]:
+                  - text: <wsdl:input
+                  - generic [ref=e3168]: name="startupJmsListener"
+                  - text: ">"
+                - generic [ref=e3171]:
+                  - text: <soap:body
+                  - generic [ref=e3172]: use="literal"
+                  - text: />
+                - generic [ref=e3174]: </wsdl:input>
+              - generic [ref=e3175]:
+                - generic [ref=e3178]:
+                  - text: <wsdl:output
+                  - generic [ref=e3179]: name="startupJmsListenerResponse"
+                  - text: ">"
+                - generic [ref=e3182]:
+                  - text: <soap:body
+                  - generic [ref=e3183]: use="literal"
+                  - text: />
+                - generic [ref=e3185]: </wsdl:output>
+            - generic [ref=e3187]: </wsdl:operation>
+          - generic [ref=e3188]:
+            - generic [ref=e3191]:
+              - text: <wsdl:operation
+              - generic [ref=e3192]: name="buyPosition"
+              - text: ">"
+            - generic [ref=e3193]:
+              - generic [ref=e3195]:
+                - text: <soap:operation
+                - generic [ref=e3196]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3197]: style="document"
+                - text: />
+              - generic [ref=e3198]:
+                - generic [ref=e3201]:
+                  - text: <wsdl:input
+                  - generic [ref=e3202]: name="buyPosition"
+                  - text: ">"
+                - generic [ref=e3205]:
+                  - text: <soap:body
+                  - generic [ref=e3206]: use="literal"
+                  - text: />
+                - generic [ref=e3208]: </wsdl:input>
+              - generic [ref=e3209]:
+                - generic [ref=e3212]:
+                  - text: <wsdl:output
+                  - generic [ref=e3213]: name="buyPositionResponse"
+                  - text: ">"
+                - generic [ref=e3216]:
+                  - text: <soap:body
+                  - generic [ref=e3217]: use="literal"
+                  - text: />
+                - generic [ref=e3219]: </wsdl:output>
+              - generic [ref=e3220]:
+                - generic [ref=e3223]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3224]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3227]:
+                  - text: <soap:fault
+                  - generic [ref=e3228]: name="ParaBankServiceException"
+                  - generic [ref=e3229]: use="literal"
+                  - text: />
+                - generic [ref=e3231]: </wsdl:fault>
+            - generic [ref=e3233]: </wsdl:operation>
+          - generic [ref=e3234]:
+            - generic [ref=e3237]:
+              - text: <wsdl:operation
+              - generic [ref=e3238]: name="getCustomer"
+              - text: ">"
+            - generic [ref=e3239]:
+              - generic [ref=e3241]:
+                - text: <soap:operation
+                - generic [ref=e3242]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3243]: style="document"
+                - text: />
+              - generic [ref=e3244]:
+                - generic [ref=e3247]:
+                  - text: <wsdl:input
+                  - generic [ref=e3248]: name="getCustomer"
+                  - text: ">"
+                - generic [ref=e3251]:
+                  - text: <soap:body
+                  - generic [ref=e3252]: use="literal"
+                  - text: />
+                - generic [ref=e3254]: </wsdl:input>
+              - generic [ref=e3255]:
+                - generic [ref=e3258]:
+                  - text: <wsdl:output
+                  - generic [ref=e3259]: name="getCustomerResponse"
+                  - text: ">"
+                - generic [ref=e3262]:
+                  - text: <soap:body
+                  - generic [ref=e3263]: use="literal"
+                  - text: />
+                - generic [ref=e3265]: </wsdl:output>
+              - generic [ref=e3266]:
+                - generic [ref=e3269]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3270]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3273]:
+                  - text: <soap:fault
+                  - generic [ref=e3274]: name="ParaBankServiceException"
+                  - generic [ref=e3275]: use="literal"
+                  - text: />
+                - generic [ref=e3277]: </wsdl:fault>
+            - generic [ref=e3279]: </wsdl:operation>
+          - generic [ref=e3280]:
+            - generic [ref=e3283]:
+              - text: <wsdl:operation
+              - generic [ref=e3284]: name="initializeDB"
+              - text: ">"
+            - generic [ref=e3285]:
+              - generic [ref=e3287]:
+                - text: <soap:operation
+                - generic [ref=e3288]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3289]: style="document"
+                - text: />
+              - generic [ref=e3290]:
+                - generic [ref=e3293]:
+                  - text: <wsdl:input
+                  - generic [ref=e3294]: name="initializeDB"
+                  - text: ">"
+                - generic [ref=e3297]:
+                  - text: <soap:body
+                  - generic [ref=e3298]: use="literal"
+                  - text: />
+                - generic [ref=e3300]: </wsdl:input>
+              - generic [ref=e3301]:
+                - generic [ref=e3304]:
+                  - text: <wsdl:output
+                  - generic [ref=e3305]: name="initializeDBResponse"
+                  - text: ">"
+                - generic [ref=e3308]:
+                  - text: <soap:body
+                  - generic [ref=e3309]: use="literal"
+                  - text: />
+                - generic [ref=e3311]: </wsdl:output>
+            - generic [ref=e3313]: </wsdl:operation>
+          - generic [ref=e3314]:
+            - generic [ref=e3317]:
+              - text: <wsdl:operation
+              - generic [ref=e3318]: name="createAccount"
+              - text: ">"
+            - generic [ref=e3319]:
+              - generic [ref=e3321]:
+                - text: <soap:operation
+                - generic [ref=e3322]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3323]: style="document"
+                - text: />
+              - generic [ref=e3324]:
+                - generic [ref=e3327]:
+                  - text: <wsdl:input
+                  - generic [ref=e3328]: name="createAccount"
+                  - text: ">"
+                - generic [ref=e3331]:
+                  - text: <soap:body
+                  - generic [ref=e3332]: use="literal"
+                  - text: />
+                - generic [ref=e3334]: </wsdl:input>
+              - generic [ref=e3335]:
+                - generic [ref=e3338]:
+                  - text: <wsdl:output
+                  - generic [ref=e3339]: name="createAccountResponse"
+                  - text: ">"
+                - generic [ref=e3342]:
+                  - text: <soap:body
+                  - generic [ref=e3343]: use="literal"
+                  - text: />
+                - generic [ref=e3345]: </wsdl:output>
+              - generic [ref=e3346]:
+                - generic [ref=e3349]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3350]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3353]:
+                  - text: <soap:fault
+                  - generic [ref=e3354]: name="ParaBankServiceException"
+                  - generic [ref=e3355]: use="literal"
+                  - text: />
+                - generic [ref=e3357]: </wsdl:fault>
+            - generic [ref=e3359]: </wsdl:operation>
+          - generic [ref=e3360]:
+            - generic [ref=e3363]:
+              - text: <wsdl:operation
+              - generic [ref=e3364]: name="getAccounts"
+              - text: ">"
+            - generic [ref=e3365]:
+              - generic [ref=e3367]:
+                - text: <soap:operation
+                - generic [ref=e3368]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3369]: style="document"
+                - text: />
+              - generic [ref=e3370]:
+                - generic [ref=e3373]:
+                  - text: <wsdl:input
+                  - generic [ref=e3374]: name="getAccounts"
+                  - text: ">"
+                - generic [ref=e3377]:
+                  - text: <soap:body
+                  - generic [ref=e3378]: use="literal"
+                  - text: />
+                - generic [ref=e3380]: </wsdl:input>
+              - generic [ref=e3381]:
+                - generic [ref=e3384]:
+                  - text: <wsdl:output
+                  - generic [ref=e3385]: name="getAccountsResponse"
+                  - text: ">"
+                - generic [ref=e3388]:
+                  - text: <soap:body
+                  - generic [ref=e3389]: use="literal"
+                  - text: />
+                - generic [ref=e3391]: </wsdl:output>
+              - generic [ref=e3392]:
+                - generic [ref=e3395]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3396]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3399]:
+                  - text: <soap:fault
+                  - generic [ref=e3400]: name="ParaBankServiceException"
+                  - generic [ref=e3401]: use="literal"
+                  - text: />
+                - generic [ref=e3403]: </wsdl:fault>
+            - generic [ref=e3405]: </wsdl:operation>
+          - generic [ref=e3406]:
+            - generic [ref=e3409]:
+              - text: <wsdl:operation
+              - generic [ref=e3410]: name="getTransactions"
+              - text: ">"
+            - generic [ref=e3411]:
+              - generic [ref=e3413]:
+                - text: <soap:operation
+                - generic [ref=e3414]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3415]: style="document"
+                - text: />
+              - generic [ref=e3416]:
+                - generic [ref=e3419]:
+                  - text: <wsdl:input
+                  - generic [ref=e3420]: name="getTransactions"
+                  - text: ">"
+                - generic [ref=e3423]:
+                  - text: <soap:body
+                  - generic [ref=e3424]: use="literal"
+                  - text: />
+                - generic [ref=e3426]: </wsdl:input>
+              - generic [ref=e3427]:
+                - generic [ref=e3430]:
+                  - text: <wsdl:output
+                  - generic [ref=e3431]: name="getTransactionsResponse"
+                  - text: ">"
+                - generic [ref=e3434]:
+                  - text: <soap:body
+                  - generic [ref=e3435]: use="literal"
+                  - text: />
+                - generic [ref=e3437]: </wsdl:output>
+              - generic [ref=e3438]:
+                - generic [ref=e3441]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3442]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3445]:
+                  - text: <soap:fault
+                  - generic [ref=e3446]: name="ParaBankServiceException"
+                  - generic [ref=e3447]: use="literal"
+                  - text: />
+                - generic [ref=e3449]: </wsdl:fault>
+            - generic [ref=e3451]: </wsdl:operation>
+          - generic [ref=e3452]:
+            - generic [ref=e3455]:
+              - text: <wsdl:operation
+              - generic [ref=e3456]: name="getTransactionsOnDate"
+              - text: ">"
+            - generic [ref=e3457]:
+              - generic [ref=e3459]:
+                - text: <soap:operation
+                - generic [ref=e3460]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3461]: style="document"
+                - text: />
+              - generic [ref=e3462]:
+                - generic [ref=e3465]:
+                  - text: <wsdl:input
+                  - generic [ref=e3466]: name="getTransactionsOnDate"
+                  - text: ">"
+                - generic [ref=e3469]:
+                  - text: <soap:body
+                  - generic [ref=e3470]: use="literal"
+                  - text: />
+                - generic [ref=e3472]: </wsdl:input>
+              - generic [ref=e3473]:
+                - generic [ref=e3476]:
+                  - text: <wsdl:output
+                  - generic [ref=e3477]: name="getTransactionsOnDateResponse"
+                  - text: ">"
+                - generic [ref=e3480]:
+                  - text: <soap:body
+                  - generic [ref=e3481]: use="literal"
+                  - text: />
+                - generic [ref=e3483]: </wsdl:output>
+              - generic [ref=e3484]:
+                - generic [ref=e3487]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3488]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3491]:
+                  - text: <soap:fault
+                  - generic [ref=e3492]: name="ParaBankServiceException"
+                  - generic [ref=e3493]: use="literal"
+                  - text: />
+                - generic [ref=e3495]: </wsdl:fault>
+            - generic [ref=e3497]: </wsdl:operation>
+          - generic [ref=e3498]:
+            - generic [ref=e3501]:
+              - text: <wsdl:operation
+              - generic [ref=e3502]: name="withdraw"
+              - text: ">"
+            - generic [ref=e3503]:
+              - generic [ref=e3505]:
+                - text: <soap:operation
+                - generic [ref=e3506]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3507]: style="document"
+                - text: />
+              - generic [ref=e3508]:
+                - generic [ref=e3511]:
+                  - text: <wsdl:input
+                  - generic [ref=e3512]: name="withdraw"
+                  - text: ">"
+                - generic [ref=e3515]:
+                  - text: <soap:body
+                  - generic [ref=e3516]: use="literal"
+                  - text: />
+                - generic [ref=e3518]: </wsdl:input>
+              - generic [ref=e3519]:
+                - generic [ref=e3522]:
+                  - text: <wsdl:output
+                  - generic [ref=e3523]: name="withdrawResponse"
+                  - text: ">"
+                - generic [ref=e3526]:
+                  - text: <soap:body
+                  - generic [ref=e3527]: use="literal"
+                  - text: />
+                - generic [ref=e3529]: </wsdl:output>
+              - generic [ref=e3530]:
+                - generic [ref=e3533]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3534]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3537]:
+                  - text: <soap:fault
+                  - generic [ref=e3538]: name="ParaBankServiceException"
+                  - generic [ref=e3539]: use="literal"
+                  - text: />
+                - generic [ref=e3541]: </wsdl:fault>
+            - generic [ref=e3543]: </wsdl:operation>
+          - generic [ref=e3544]:
+            - generic [ref=e3547]:
+              - text: <wsdl:operation
+              - generic [ref=e3548]: name="updateCustomer"
+              - text: ">"
+            - generic [ref=e3549]:
+              - generic [ref=e3551]:
+                - text: <soap:operation
+                - generic [ref=e3552]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3553]: style="document"
+                - text: />
+              - generic [ref=e3554]:
+                - generic [ref=e3557]:
+                  - text: <wsdl:input
+                  - generic [ref=e3558]: name="updateCustomer"
+                  - text: ">"
+                - generic [ref=e3561]:
+                  - text: <soap:body
+                  - generic [ref=e3562]: use="literal"
+                  - text: />
+                - generic [ref=e3564]: </wsdl:input>
+              - generic [ref=e3565]:
+                - generic [ref=e3568]:
+                  - text: <wsdl:output
+                  - generic [ref=e3569]: name="updateCustomerResponse"
+                  - text: ">"
+                - generic [ref=e3572]:
+                  - text: <soap:body
+                  - generic [ref=e3573]: use="literal"
+                  - text: />
+                - generic [ref=e3575]: </wsdl:output>
+              - generic [ref=e3576]:
+                - generic [ref=e3579]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3580]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3583]:
+                  - text: <soap:fault
+                  - generic [ref=e3584]: name="ParaBankServiceException"
+                  - generic [ref=e3585]: use="literal"
+                  - text: />
+                - generic [ref=e3587]: </wsdl:fault>
+            - generic [ref=e3589]: </wsdl:operation>
+          - generic [ref=e3590]:
+            - generic [ref=e3593]:
+              - text: <wsdl:operation
+              - generic [ref=e3594]: name="deposit"
+              - text: ">"
+            - generic [ref=e3595]:
+              - generic [ref=e3597]:
+                - text: <soap:operation
+                - generic [ref=e3598]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3599]: style="document"
+                - text: />
+              - generic [ref=e3600]:
+                - generic [ref=e3603]:
+                  - text: <wsdl:input
+                  - generic [ref=e3604]: name="deposit"
+                  - text: ">"
+                - generic [ref=e3607]:
+                  - text: <soap:body
+                  - generic [ref=e3608]: use="literal"
+                  - text: />
+                - generic [ref=e3610]: </wsdl:input>
+              - generic [ref=e3611]:
+                - generic [ref=e3614]:
+                  - text: <wsdl:output
+                  - generic [ref=e3615]: name="depositResponse"
+                  - text: ">"
+                - generic [ref=e3618]:
+                  - text: <soap:body
+                  - generic [ref=e3619]: use="literal"
+                  - text: />
+                - generic [ref=e3621]: </wsdl:output>
+              - generic [ref=e3622]:
+                - generic [ref=e3625]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3626]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3629]:
+                  - text: <soap:fault
+                  - generic [ref=e3630]: name="ParaBankServiceException"
+                  - generic [ref=e3631]: use="literal"
+                  - text: />
+                - generic [ref=e3633]: </wsdl:fault>
+            - generic [ref=e3635]: </wsdl:operation>
+          - generic [ref=e3636]:
+            - generic [ref=e3639]:
+              - text: <wsdl:operation
+              - generic [ref=e3640]: name="getTransactionsByToFromDate"
+              - text: ">"
+            - generic [ref=e3641]:
+              - generic [ref=e3643]:
+                - text: <soap:operation
+                - generic [ref=e3644]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3645]: style="document"
+                - text: />
+              - generic [ref=e3646]:
+                - generic [ref=e3649]:
+                  - text: <wsdl:input
+                  - generic [ref=e3650]: name="getTransactionsByToFromDate"
+                  - text: ">"
+                - generic [ref=e3653]:
+                  - text: <soap:body
+                  - generic [ref=e3654]: use="literal"
+                  - text: />
+                - generic [ref=e3656]: </wsdl:input>
+              - generic [ref=e3657]:
+                - generic [ref=e3660]:
+                  - text: <wsdl:output
+                  - generic [ref=e3661]: name="getTransactionsByToFromDateResponse"
+                  - text: ">"
+                - generic [ref=e3664]:
+                  - text: <soap:body
+                  - generic [ref=e3665]: use="literal"
+                  - text: />
+                - generic [ref=e3667]: </wsdl:output>
+              - generic [ref=e3668]:
+                - generic [ref=e3671]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3672]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3675]:
+                  - text: <soap:fault
+                  - generic [ref=e3676]: name="ParaBankServiceException"
+                  - generic [ref=e3677]: use="literal"
+                  - text: />
+                - generic [ref=e3679]: </wsdl:fault>
+            - generic [ref=e3681]: </wsdl:operation>
+          - generic [ref=e3682]:
+            - generic [ref=e3685]:
+              - text: <wsdl:operation
+              - generic [ref=e3686]: name="shutdownJmsListener"
+              - text: ">"
+            - generic [ref=e3687]:
+              - generic [ref=e3689]:
+                - text: <soap:operation
+                - generic [ref=e3690]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3691]: style="document"
+                - text: />
+              - generic [ref=e3692]:
+                - generic [ref=e3695]:
+                  - text: <wsdl:input
+                  - generic [ref=e3696]: name="shutdownJmsListener"
+                  - text: ">"
+                - generic [ref=e3699]:
+                  - text: <soap:body
+                  - generic [ref=e3700]: use="literal"
+                  - text: />
+                - generic [ref=e3702]: </wsdl:input>
+              - generic [ref=e3703]:
+                - generic [ref=e3706]:
+                  - text: <wsdl:output
+                  - generic [ref=e3707]: name="shutdownJmsListenerResponse"
+                  - text: ">"
+                - generic [ref=e3710]:
+                  - text: <soap:body
+                  - generic [ref=e3711]: use="literal"
+                  - text: />
+                - generic [ref=e3713]: </wsdl:output>
+            - generic [ref=e3715]: </wsdl:operation>
+          - generic [ref=e3716]:
+            - generic [ref=e3719]:
+              - text: <wsdl:operation
+              - generic [ref=e3720]: name="getPosition"
+              - text: ">"
+            - generic [ref=e3721]:
+              - generic [ref=e3723]:
+                - text: <soap:operation
+                - generic [ref=e3724]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3725]: style="document"
+                - text: />
+              - generic [ref=e3726]:
+                - generic [ref=e3729]:
+                  - text: <wsdl:input
+                  - generic [ref=e3730]: name="getPosition"
+                  - text: ">"
+                - generic [ref=e3733]:
+                  - text: <soap:body
+                  - generic [ref=e3734]: use="literal"
+                  - text: />
+                - generic [ref=e3736]: </wsdl:input>
+              - generic [ref=e3737]:
+                - generic [ref=e3740]:
+                  - text: <wsdl:output
+                  - generic [ref=e3741]: name="getPositionResponse"
+                  - text: ">"
+                - generic [ref=e3744]:
+                  - text: <soap:body
+                  - generic [ref=e3745]: use="literal"
+                  - text: />
+                - generic [ref=e3747]: </wsdl:output>
+              - generic [ref=e3748]:
+                - generic [ref=e3751]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3752]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3755]:
+                  - text: <soap:fault
+                  - generic [ref=e3756]: name="ParaBankServiceException"
+                  - generic [ref=e3757]: use="literal"
+                  - text: />
+                - generic [ref=e3759]: </wsdl:fault>
+            - generic [ref=e3761]: </wsdl:operation>
+          - generic [ref=e3762]:
+            - generic [ref=e3765]:
+              - text: <wsdl:operation
+              - generic [ref=e3766]: name="transfer"
+              - text: ">"
+            - generic [ref=e3767]:
+              - generic [ref=e3769]:
+                - text: <soap:operation
+                - generic [ref=e3770]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3771]: style="document"
+                - text: />
+              - generic [ref=e3772]:
+                - generic [ref=e3775]:
+                  - text: <wsdl:input
+                  - generic [ref=e3776]: name="transfer"
+                  - text: ">"
+                - generic [ref=e3779]:
+                  - text: <soap:body
+                  - generic [ref=e3780]: use="literal"
+                  - text: />
+                - generic [ref=e3782]: </wsdl:input>
+              - generic [ref=e3783]:
+                - generic [ref=e3786]:
+                  - text: <wsdl:output
+                  - generic [ref=e3787]: name="transferResponse"
+                  - text: ">"
+                - generic [ref=e3790]:
+                  - text: <soap:body
+                  - generic [ref=e3791]: use="literal"
+                  - text: />
+                - generic [ref=e3793]: </wsdl:output>
+              - generic [ref=e3794]:
+                - generic [ref=e3797]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3798]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3801]:
+                  - text: <soap:fault
+                  - generic [ref=e3802]: name="ParaBankServiceException"
+                  - generic [ref=e3803]: use="literal"
+                  - text: />
+                - generic [ref=e3805]: </wsdl:fault>
+            - generic [ref=e3807]: </wsdl:operation>
+          - generic [ref=e3808]:
+            - generic [ref=e3811]:
+              - text: <wsdl:operation
+              - generic [ref=e3812]: name="login"
+              - text: ">"
+            - generic [ref=e3813]:
+              - generic [ref=e3815]:
+                - text: <soap:operation
+                - generic [ref=e3816]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3817]: style="document"
+                - text: />
+              - generic [ref=e3818]:
+                - generic [ref=e3821]:
+                  - text: <wsdl:input
+                  - generic [ref=e3822]: name="login"
+                  - text: ">"
+                - generic [ref=e3825]:
+                  - text: <soap:body
+                  - generic [ref=e3826]: use="literal"
+                  - text: />
+                - generic [ref=e3828]: </wsdl:input>
+              - generic [ref=e3829]:
+                - generic [ref=e3832]:
+                  - text: <wsdl:output
+                  - generic [ref=e3833]: name="loginResponse"
+                  - text: ">"
+                - generic [ref=e3836]:
+                  - text: <soap:body
+                  - generic [ref=e3837]: use="literal"
+                  - text: />
+                - generic [ref=e3839]: </wsdl:output>
+              - generic [ref=e3840]:
+                - generic [ref=e3843]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3844]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3847]:
+                  - text: <soap:fault
+                  - generic [ref=e3848]: name="ParaBankServiceException"
+                  - generic [ref=e3849]: use="literal"
+                  - text: />
+                - generic [ref=e3851]: </wsdl:fault>
+            - generic [ref=e3853]: </wsdl:operation>
+          - generic [ref=e3854]:
+            - generic [ref=e3857]:
+              - text: <wsdl:operation
+              - generic [ref=e3858]: name="getTransactionsByMonthAndType"
+              - text: ">"
+            - generic [ref=e3859]:
+              - generic [ref=e3861]:
+                - text: <soap:operation
+                - generic [ref=e3862]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3863]: style="document"
+                - text: />
+              - generic [ref=e3864]:
+                - generic [ref=e3867]:
+                  - text: <wsdl:input
+                  - generic [ref=e3868]: name="getTransactionsByMonthAndType"
+                  - text: ">"
+                - generic [ref=e3871]:
+                  - text: <soap:body
+                  - generic [ref=e3872]: use="literal"
+                  - text: />
+                - generic [ref=e3874]: </wsdl:input>
+              - generic [ref=e3875]:
+                - generic [ref=e3878]:
+                  - text: <wsdl:output
+                  - generic [ref=e3879]: name="getTransactionsByMonthAndTypeResponse"
+                  - text: ">"
+                - generic [ref=e3882]:
+                  - text: <soap:body
+                  - generic [ref=e3883]: use="literal"
+                  - text: />
+                - generic [ref=e3885]: </wsdl:output>
+              - generic [ref=e3886]:
+                - generic [ref=e3889]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3890]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3893]:
+                  - text: <soap:fault
+                  - generic [ref=e3894]: name="ParaBankServiceException"
+                  - generic [ref=e3895]: use="literal"
+                  - text: />
+                - generic [ref=e3897]: </wsdl:fault>
+            - generic [ref=e3899]: </wsdl:operation>
+          - generic [ref=e3900]:
+            - generic [ref=e3903]:
+              - text: <wsdl:operation
+              - generic [ref=e3904]: name="getPositionHistory"
+              - text: ">"
+            - generic [ref=e3905]:
+              - generic [ref=e3907]:
+                - text: <soap:operation
+                - generic [ref=e3908]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3909]: style="document"
+                - text: />
+              - generic [ref=e3910]:
+                - generic [ref=e3913]:
+                  - text: <wsdl:input
+                  - generic [ref=e3914]: name="getPositionHistory"
+                  - text: ">"
+                - generic [ref=e3917]:
+                  - text: <soap:body
+                  - generic [ref=e3918]: use="literal"
+                  - text: />
+                - generic [ref=e3920]: </wsdl:input>
+              - generic [ref=e3921]:
+                - generic [ref=e3924]:
+                  - text: <wsdl:output
+                  - generic [ref=e3925]: name="getPositionHistoryResponse"
+                  - text: ">"
+                - generic [ref=e3928]:
+                  - text: <soap:body
+                  - generic [ref=e3929]: use="literal"
+                  - text: />
+                - generic [ref=e3931]: </wsdl:output>
+              - generic [ref=e3932]:
+                - generic [ref=e3935]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3936]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3939]:
+                  - text: <soap:fault
+                  - generic [ref=e3940]: name="ParaBankServiceException"
+                  - generic [ref=e3941]: use="literal"
+                  - text: />
+                - generic [ref=e3943]: </wsdl:fault>
+            - generic [ref=e3945]: </wsdl:operation>
+          - generic [ref=e3946]:
+            - generic [ref=e3949]:
+              - text: <wsdl:operation
+              - generic [ref=e3950]: name="getTransaction"
+              - text: ">"
+            - generic [ref=e3951]:
+              - generic [ref=e3953]:
+                - text: <soap:operation
+                - generic [ref=e3954]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e3955]: style="document"
+                - text: />
+              - generic [ref=e3956]:
+                - generic [ref=e3959]:
+                  - text: <wsdl:input
+                  - generic [ref=e3960]: name="getTransaction"
+                  - text: ">"
+                - generic [ref=e3963]:
+                  - text: <soap:body
+                  - generic [ref=e3964]: use="literal"
+                  - text: />
+                - generic [ref=e3966]: </wsdl:input>
+              - generic [ref=e3967]:
+                - generic [ref=e3970]:
+                  - text: <wsdl:output
+                  - generic [ref=e3971]: name="getTransactionResponse"
+                  - text: ">"
+                - generic [ref=e3974]:
+                  - text: <soap:body
+                  - generic [ref=e3975]: use="literal"
+                  - text: />
+                - generic [ref=e3977]: </wsdl:output>
+              - generic [ref=e3978]:
+                - generic [ref=e3981]:
+                  - text: <wsdl:fault
+                  - generic [ref=e3982]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e3985]:
+                  - text: <soap:fault
+                  - generic [ref=e3986]: name="ParaBankServiceException"
+                  - generic [ref=e3987]: use="literal"
+                  - text: />
+                - generic [ref=e3989]: </wsdl:fault>
+            - generic [ref=e3991]: </wsdl:operation>
+          - generic [ref=e3992]:
+            - generic [ref=e3995]:
+              - text: <wsdl:operation
+              - generic [ref=e3996]: name="setParameter"
+              - text: ">"
+            - generic [ref=e3997]:
+              - generic [ref=e3999]:
+                - text: <soap:operation
+                - generic [ref=e4000]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e4001]: style="document"
+                - text: />
+              - generic [ref=e4002]:
+                - generic [ref=e4005]:
+                  - text: <wsdl:input
+                  - generic [ref=e4006]: name="setParameter"
+                  - text: ">"
+                - generic [ref=e4009]:
+                  - text: <soap:body
+                  - generic [ref=e4010]: use="literal"
+                  - text: />
+                - generic [ref=e4012]: </wsdl:input>
+              - generic [ref=e4013]:
+                - generic [ref=e4016]:
+                  - text: <wsdl:output
+                  - generic [ref=e4017]: name="setParameterResponse"
+                  - text: ">"
+                - generic [ref=e4020]:
+                  - text: <soap:body
+                  - generic [ref=e4021]: use="literal"
+                  - text: />
+                - generic [ref=e4023]: </wsdl:output>
+            - generic [ref=e4025]: </wsdl:operation>
+          - generic [ref=e4026]:
+            - generic [ref=e4029]:
+              - text: <wsdl:operation
+              - generic [ref=e4030]: name="getPositions"
+              - text: ">"
+            - generic [ref=e4031]:
+              - generic [ref=e4033]:
+                - text: <soap:operation
+                - generic [ref=e4034]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e4035]: style="document"
+                - text: />
+              - generic [ref=e4036]:
+                - generic [ref=e4039]:
+                  - text: <wsdl:input
+                  - generic [ref=e4040]: name="getPositions"
+                  - text: ">"
+                - generic [ref=e4043]:
+                  - text: <soap:body
+                  - generic [ref=e4044]: use="literal"
+                  - text: />
+                - generic [ref=e4046]: </wsdl:input>
+              - generic [ref=e4047]:
+                - generic [ref=e4050]:
+                  - text: <wsdl:output
+                  - generic [ref=e4051]: name="getPositionsResponse"
+                  - text: ">"
+                - generic [ref=e4054]:
+                  - text: <soap:body
+                  - generic [ref=e4055]: use="literal"
+                  - text: />
+                - generic [ref=e4057]: </wsdl:output>
+              - generic [ref=e4058]:
+                - generic [ref=e4061]:
+                  - text: <wsdl:fault
+                  - generic [ref=e4062]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e4065]:
+                  - text: <soap:fault
+                  - generic [ref=e4066]: name="ParaBankServiceException"
+                  - generic [ref=e4067]: use="literal"
+                  - text: />
+                - generic [ref=e4069]: </wsdl:fault>
+            - generic [ref=e4071]: </wsdl:operation>
+          - generic [ref=e4072]:
+            - generic [ref=e4075]:
+              - text: <wsdl:operation
+              - generic [ref=e4076]: name="getTransactionsByAmount"
+              - text: ">"
+            - generic [ref=e4077]:
+              - generic [ref=e4079]:
+                - text: <soap:operation
+                - generic [ref=e4080]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e4081]: style="document"
+                - text: />
+              - generic [ref=e4082]:
+                - generic [ref=e4085]:
+                  - text: <wsdl:input
+                  - generic [ref=e4086]: name="getTransactionsByAmount"
+                  - text: ">"
+                - generic [ref=e4089]:
+                  - text: <soap:body
+                  - generic [ref=e4090]: use="literal"
+                  - text: />
+                - generic [ref=e4092]: </wsdl:input>
+              - generic [ref=e4093]:
+                - generic [ref=e4096]:
+                  - text: <wsdl:output
+                  - generic [ref=e4097]: name="getTransactionsByAmountResponse"
+                  - text: ">"
+                - generic [ref=e4100]:
+                  - text: <soap:body
+                  - generic [ref=e4101]: use="literal"
+                  - text: />
+                - generic [ref=e4103]: </wsdl:output>
+              - generic [ref=e4104]:
+                - generic [ref=e4107]:
+                  - text: <wsdl:fault
+                  - generic [ref=e4108]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e4111]:
+                  - text: <soap:fault
+                  - generic [ref=e4112]: name="ParaBankServiceException"
+                  - generic [ref=e4113]: use="literal"
+                  - text: />
+                - generic [ref=e4115]: </wsdl:fault>
+            - generic [ref=e4117]: </wsdl:operation>
+          - generic [ref=e4118]:
+            - generic [ref=e4121]:
+              - text: <wsdl:operation
+              - generic [ref=e4122]: name="sellPosition"
+              - text: ">"
+            - generic [ref=e4123]:
+              - generic [ref=e4125]:
+                - text: <soap:operation
+                - generic [ref=e4126]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e4127]: style="document"
+                - text: />
+              - generic [ref=e4128]:
+                - generic [ref=e4131]:
+                  - text: <wsdl:input
+                  - generic [ref=e4132]: name="sellPosition"
+                  - text: ">"
+                - generic [ref=e4135]:
+                  - text: <soap:body
+                  - generic [ref=e4136]: use="literal"
+                  - text: />
+                - generic [ref=e4138]: </wsdl:input>
+              - generic [ref=e4139]:
+                - generic [ref=e4142]:
+                  - text: <wsdl:output
+                  - generic [ref=e4143]: name="sellPositionResponse"
+                  - text: ">"
+                - generic [ref=e4146]:
+                  - text: <soap:body
+                  - generic [ref=e4147]: use="literal"
+                  - text: />
+                - generic [ref=e4149]: </wsdl:output>
+              - generic [ref=e4150]:
+                - generic [ref=e4153]:
+                  - text: <wsdl:fault
+                  - generic [ref=e4154]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e4157]:
+                  - text: <soap:fault
+                  - generic [ref=e4158]: name="ParaBankServiceException"
+                  - generic [ref=e4159]: use="literal"
+                  - text: />
+                - generic [ref=e4161]: </wsdl:fault>
+            - generic [ref=e4163]: </wsdl:operation>
+          - generic [ref=e4164]:
+            - generic [ref=e4167]:
+              - text: <wsdl:operation
+              - generic [ref=e4168]: name="cleanDB"
+              - text: ">"
+            - generic [ref=e4169]:
+              - generic [ref=e4171]:
+                - text: <soap:operation
+                - generic [ref=e4172]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e4173]: style="document"
+                - text: />
+              - generic [ref=e4174]:
+                - generic [ref=e4177]:
+                  - text: <wsdl:input
+                  - generic [ref=e4178]: name="cleanDB"
+                  - text: ">"
+                - generic [ref=e4181]:
+                  - text: <soap:body
+                  - generic [ref=e4182]: use="literal"
+                  - text: />
+                - generic [ref=e4184]: </wsdl:input>
+              - generic [ref=e4185]:
+                - generic [ref=e4188]:
+                  - text: <wsdl:output
+                  - generic [ref=e4189]: name="cleanDBResponse"
+                  - text: ">"
+                - generic [ref=e4192]:
+                  - text: <soap:body
+                  - generic [ref=e4193]: use="literal"
+                  - text: />
+                - generic [ref=e4195]: </wsdl:output>
+            - generic [ref=e4197]: </wsdl:operation>
+          - generic [ref=e4198]:
+            - generic [ref=e4201]:
+              - text: <wsdl:operation
+              - generic [ref=e4202]: name="requestLoan"
+              - text: ">"
+            - generic [ref=e4203]:
+              - generic [ref=e4205]:
+                - text: <soap:operation
+                - generic [ref=e4206]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e4207]: style="document"
+                - text: />
+              - generic [ref=e4208]:
+                - generic [ref=e4211]:
+                  - text: <wsdl:input
+                  - generic [ref=e4212]: name="requestLoan"
+                  - text: ">"
+                - generic [ref=e4215]:
+                  - text: <soap:body
+                  - generic [ref=e4216]: use="literal"
+                  - text: />
+                - generic [ref=e4218]: </wsdl:input>
+              - generic [ref=e4219]:
+                - generic [ref=e4222]:
+                  - text: <wsdl:output
+                  - generic [ref=e4223]: name="requestLoanResponse"
+                  - text: ">"
+                - generic [ref=e4226]:
+                  - text: <soap:body
+                  - generic [ref=e4227]: use="literal"
+                  - text: />
+                - generic [ref=e4229]: </wsdl:output>
+              - generic [ref=e4230]:
+                - generic [ref=e4233]:
+                  - text: <wsdl:fault
+                  - generic [ref=e4234]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e4237]:
+                  - text: <soap:fault
+                  - generic [ref=e4238]: name="ParaBankServiceException"
+                  - generic [ref=e4239]: use="literal"
+                  - text: />
+                - generic [ref=e4241]: </wsdl:fault>
+            - generic [ref=e4243]: </wsdl:operation>
+          - generic [ref=e4244]:
+            - generic [ref=e4247]:
+              - text: <wsdl:operation
+              - generic [ref=e4248]: name="getAccount"
+              - text: ">"
+            - generic [ref=e4249]:
+              - generic [ref=e4251]:
+                - text: <soap:operation
+                - generic [ref=e4252]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e4253]: style="document"
+                - text: />
+              - generic [ref=e4254]:
+                - generic [ref=e4257]:
+                  - text: <wsdl:input
+                  - generic [ref=e4258]: name="getAccount"
+                  - text: ">"
+                - generic [ref=e4261]:
+                  - text: <soap:body
+                  - generic [ref=e4262]: use="literal"
+                  - text: />
+                - generic [ref=e4264]: </wsdl:input>
+              - generic [ref=e4265]:
+                - generic [ref=e4268]:
+                  - text: <wsdl:output
+                  - generic [ref=e4269]: name="getAccountResponse"
+                  - text: ">"
+                - generic [ref=e4272]:
+                  - text: <soap:body
+                  - generic [ref=e4273]: use="literal"
+                  - text: />
+                - generic [ref=e4275]: </wsdl:output>
+              - generic [ref=e4276]:
+                - generic [ref=e4279]:
+                  - text: <wsdl:fault
+                  - generic [ref=e4280]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e4283]:
+                  - text: <soap:fault
+                  - generic [ref=e4284]: name="ParaBankServiceException"
+                  - generic [ref=e4285]: use="literal"
+                  - text: />
+                - generic [ref=e4287]: </wsdl:fault>
+            - generic [ref=e4289]: </wsdl:operation>
+          - generic [ref=e4290]:
+            - generic [ref=e4293]:
+              - text: <wsdl:operation
+              - generic [ref=e4294]: name="billPay"
+              - text: ">"
+            - generic [ref=e4295]:
+              - generic [ref=e4297]:
+                - text: <soap:operation
+                - generic [ref=e4298]:
+                  - text: soapAction="
+                  - text: "\""
+                - generic [ref=e4299]: style="document"
+                - text: />
+              - generic [ref=e4300]:
+                - generic [ref=e4303]:
+                  - text: <wsdl:input
+                  - generic [ref=e4304]: name="billPay"
+                  - text: ">"
+                - generic [ref=e4307]:
+                  - text: <soap:body
+                  - generic [ref=e4308]: use="literal"
+                  - text: />
+                - generic [ref=e4310]: </wsdl:input>
+              - generic [ref=e4311]:
+                - generic [ref=e4314]:
+                  - text: <wsdl:output
+                  - generic [ref=e4315]: name="billPayResponse"
+                  - text: ">"
+                - generic [ref=e4318]:
+                  - text: <soap:body
+                  - generic [ref=e4319]: use="literal"
+                  - text: />
+                - generic [ref=e4321]: </wsdl:output>
+              - generic [ref=e4322]:
+                - generic [ref=e4325]:
+                  - text: <wsdl:fault
+                  - generic [ref=e4326]: name="ParaBankServiceException"
+                  - text: ">"
+                - generic [ref=e4329]:
+                  - text: <soap:fault
+                  - generic [ref=e4330]: name="ParaBankServiceException"
+                  - generic [ref=e4331]: use="literal"
+                  - text: />
+                - generic [ref=e4333]: </wsdl:fault>
+            - generic [ref=e4335]: </wsdl:operation>
+        - generic [ref=e4337]: </wsdl:binding>
+      - generic [ref=e4338]:
+        - generic [ref=e4341]:
+          - text: <wsdl:service
+          - generic [ref=e4342]: name="ParaBank"
+          - text: ">"
+        - generic [ref=e4344]:
+          - generic [ref=e4347]:
+            - text: <wsdl:port
+            - generic [ref=e4348]: binding="tns:ParaBankSoapBinding"
+            - generic [ref=e4349]: name="ParaBankServiceImplPort"
+            - text: ">"
+          - generic [ref=e4352]:
+            - text: <soap:address
+            - generic [ref=e4353]: location="https://parabank.parasoft.com/parabank/services/ParaBank;jsessionid=5DC5825DA60BA5FE76B8F9F191902786"
+            - text: />
+          - generic [ref=e4355]: </wsdl:port>
+        - generic [ref=e4357]: </wsdl:service>
+    - generic [ref=e4359]: </wsdl:definitions>
+```
