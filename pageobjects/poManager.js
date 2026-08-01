@@ -2,6 +2,7 @@ import {HomePage} from '../pageobjects/HomePage'
 import {RegistrationPage} from '../pageobjects/RegistrationPage'
 import {LoginPage} from '../pageobjects/LoginPage'
 import {FundTransferPage} from '../pageobjects/FundTransferPage'
+import {OpenAccountPage} from '../pageobjects/OpenAccountPage'
 
 export class poManager
 {
@@ -12,6 +13,7 @@ export class poManager
         this.registerpage = new RegistrationPage(this.page)
         this.loginpage = new LoginPage(this.page)
         this.fundtransferpage = new FundTransferPage(this.page)
+        this.openaccountpage = new OpenAccountPage(this.page)
         // this.fundtrasferdetails = new FundTransferPage(this.page)
 
     }
@@ -34,6 +36,11 @@ export class poManager
     getFundTransferPage()
     {
         return this.fundtransferpage
+    }
+
+    getOpenAccountPage()
+    {
+        return this.openaccountpage
     }
     // getFundTransferDetails()
     // {

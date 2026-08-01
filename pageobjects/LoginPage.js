@@ -9,17 +9,31 @@ export class LoginPage
         this.loginButton=page.locator("//input[@value='Log In']")
      }
 
+     generateRandomUsername(prefix = 'user')
+     {
+        return `${prefix}${Date.now()}`
+     }
+
+     generateRandomPassword(prefix = 'Pass')
+     {
+        return `${prefix}${Date.now()}`
+     }
 
     //    async clickOnRegisterLink()
     //    {
     //       await this.registerLink.click()
     //    }
 
-     async loginToApplication(username,password)
+     async loginToApplication(username = this.generateRandomUsername(), password = this.generateRandomPassword())
      {
-           await this.userName.fill(username)
-           await this.password.fill(password)
-            await this.loginButton.click()
+        await this.userName.waitFor({ state: 'visible' });
+        await this.userName.fill(username);
+
+        await this.password.waitFor({ state: 'visible' });
+        await this.password.fill(password);
+
+        await this.loginButton.waitFor({ state: 'visible' });
+        await this.loginButton.click();
            
      }
  }

@@ -17,7 +17,17 @@ export class RegistrationPage
          this.registerbutton =page.locator("//input[@value='Register']")
       }
 
-    async registerNewUser(fname,lname,address,city,state,zipcode,phone,ssn,username,pass)
+     generateRandomUsername(prefix = 'user')
+     {
+        return `${prefix}${Date.now()}`
+     }
+
+     generateRandomPassword(prefix = 'Pass')
+     {
+        return `${prefix}${Date.now()}`
+     }
+
+    async registerNewUser(fname,lname,address,city,state,zipcode,phone,ssn,username = this.generateRandomUsername(), pass = this.generateRandomPassword())
     {
         await this.firstName.fill(fname)
         await this.lastName.fill(lname)
