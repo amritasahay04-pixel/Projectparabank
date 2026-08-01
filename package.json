@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "smoke": "npx playwright test --grep @smoke --project=ParaBank",
-    "regression": "npx playwright test --grep-invert \"@smoke\" --project=ParaBank"
+    "regression": "npx playwright test --grep-invert \"@smoke\" --project=ParaBank",
+    "show-report": "npx playwright show-report --host 127.0.0.1 --port 9324"
   },
   "keywords": [],
   "author": "",

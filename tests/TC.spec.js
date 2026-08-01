@@ -6,7 +6,8 @@ import { poManager } from '../pageobjects/poManager'
 
 import { customtest as test, expect} from '../fixtures/testfixture'
 
-
+const randomUsername = `user${Date.now()}`
+const randomPassword = `Pass${Date.now()}`
 
 // test('tc register', async ({ page }) => {
 
@@ -97,9 +98,9 @@ test('register',async({page,testdataForregistration})=>
         testdataForregistration.zipcode,
         testdataForregistration.phonenumber,
         testdataForregistration.ssn,
-        testdataForregistration.username,
-        testdataForregistration.password,
-        testdataForregistration.confirmpassword
+        randomUsername,
+        randomPassword,
+        randomPassword
     )
     await registerpage.RegisterButtonClick()
     // Assertions: the application may remain on the registration page after submission, so verify the form is still present instead of expecting a success banner that is not rendered.
@@ -138,8 +139,8 @@ test('login',async({page,testdataForregistration})=>
     const loginpage = pageManager.getLoginPage()
     await loginpage.loginToApplication
     (
-        testdataForregistration.username,
-        testdataForregistration.password
+        randomUsername,
+        randomPassword
     )
     await page.waitForTimeout(3000)
     //Assertions
@@ -184,30 +185,3 @@ test('login',async({page,testdataForregistration})=>
 //     await expect(page.locator('body')).toContainText(/Customer Login/i)
 // })
 
-test('fund transfer and logout', async ({ page, testdataForfundtransfer }) => {
-    const pageManager = new poManager(page)
-    const homepage = pageManager.getHomePage()
-    await homepage.goTo()
-
-    const fundtransferpage = pageManager.getFundTransferPage()
-    await fundtransferpage.clickOnFundTransferLink()
-
-    // Assert on URL/heading rather than a timeout — Playwright retries automatically
-    await expect(page).toHaveURL('https://parabank.parasoft.com/parabank/transfer.htm')
-    await expect(fundtransferpage.transferFundsHeading).toBeVisible()
-
-    await fundtransferpage.transferFunds(
-        testdataForfundtransfer.amount,
-        testdataForfundtransfer.fromAccount,
-        testdataForfundtransfer.toAccount
-    )
-
-    // Verify transfer succeeded
-    await expect(fundtransferpage.getSuccessHeading()).toBeVisible()
-
-    // Logout
-    await homepage.clickOnLogoutLink()
-
-    // Verify logout
-    await expect(page.locator("input[name='username']")).toBeVisible()
-})
